@@ -23,7 +23,7 @@ public class HibCon {
 	}
 	
 	/*
-	 * Schema hatpin
+	 * Schema "hatpin"
 	 * 
 	 * Tabella pin
 	 * colonne:

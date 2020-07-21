@@ -85,6 +85,8 @@ public class Pin {
 		this.ref_img = ref_img;
 	}
 	
+	
+	//Metodo per creare nuovo Pin
 	public void newEntry(Pin l) {
 	HibCon hC = new HibCon();
 	try (Session s = hC.getSessionFactory().openSession()) {
@@ -94,16 +96,23 @@ public class Pin {
 	}
 	}
 	
+	
+	//Questi sono 3 finti override di toString in modo che quando li chiamo in una 
+	// stringa mi infili solo il parametro desiderato
+	
+	//LatLng
 	public String LatLngToString() {
 		String latlng = getLatlng().toString();
 		return latlng;
 	}
 	
+	//Titolo
 	public String TitoloToString() {
 		String titolo = getTitolo().toString();
 		return titolo;
 	}
 	
+	//Corpo
 	public String CorpoToString() {
 		String corpo = getCorpo().toString();
 		return corpo;

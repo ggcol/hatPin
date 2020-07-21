@@ -29,7 +29,9 @@ public class InsertPin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	Pin p1 = new Pin();
+		
+		
+		Pin p1 = new Pin();
 		
 		p1.setTitolo(request.getParameter("titolo"));
 		p1.setCorpo(request.getParameter("corpo"));
