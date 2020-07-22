@@ -14,7 +14,7 @@ public class Main {
 		PinHelper pH = new PinHelper();
 		List<String> param4Marker = new LinkedList<String>();
 		
-		param4Marker = pH.leggiPin(); 
+		param4Marker = pH.importPinFields(); 
 		
 		//cicla e restituisce i singoli elementi del costruttore come singole stringhe
 		//al momento le stampa a console ma bisogna integrarle con HTML per refresh!

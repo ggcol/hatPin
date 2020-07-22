@@ -7,30 +7,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.abupro.LatLng.function.UserHelper;
 import it.abupro.LatLng.entities.*;
-import it.abupro.LatLng.function.PinHelper;
 
 /**
- * Servlet implementation class InsertPin
+ * Servlet implementation class SignIn
  */
-@WebServlet("/insertPin")
-public class InsertPin extends HttpServlet {
+@WebServlet("/signIn")
+public class SignIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Pin p1 = new Pin();
-		PinHelper pH = new PinHelper();
-		
-		p1.setTitle(request.getParameter("titolo"));
-		p1.setBody(request.getParameter("corpo"));
-		p1.setLatlng(request.getParameter("latlng"));
-		pH.newPin(p1);
-		
-		response.sendRedirect("index.html");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		User u1 = new User();
+		UserHelper uH = new UserHelper();
+		
+		//aggiungere request.getParameter vari
+		u1.setUsername(request.getParameter("username"));
+		u1.setName(request.getParameter("name"));
+		u1.setSurname(request.getParameter("surname"));
+		//manca data di nascita
+		u1.setEmail(request.getParameter("email"));
+		u1.setPassword(request.getParameter("password"));
+		
+		uH.newUser(u1);
 	}
 
 }

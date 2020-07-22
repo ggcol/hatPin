@@ -24,15 +24,6 @@ import it.abupro.LatLng.function.PinHelper;
 public class Refresher extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Refresher() {
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//oggetto per estrarre dati da DB
@@ -41,7 +32,7 @@ public class Refresher extends HttpServlet {
 		List<String> param4Marker = new LinkedList<String>();
 
 		//Ficco nella lista singole stringhe (vedi in classe PinHelper)
-		param4Marker = pH.leggiPin();
+		param4Marker = pH.importPinFields();
 
 		//Ciclo la lista per estrarre le Stringhe con i singoli "parametri" che necessita
 		//il costruttore .js dei Pin
@@ -63,13 +54,10 @@ public class Refresher extends HttpServlet {
 					+ "</script>");
 
 		}
-
+		//fuori dal ciclo
 
 
 	}
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

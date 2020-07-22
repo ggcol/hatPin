@@ -1,7 +1,5 @@
 package it.abupro.LatLng.entities;
 
-import java.util.LinkedList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,11 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-
-import org.hibernate.Session;
-
-import it.abupro.LatLng.connection.HibCon;
 
 
 @Entity
@@ -26,19 +19,19 @@ public class Pin {
 	private int idPin;
 	@Column(name="latlng")
 	private String latlng;
-	@Column(name="titolo")
-	private String titolo;
-	@Column(name="corpo")
-	private String corpo;
+	@Column(name="title")
+	private String title;
+	@Column(name="body")
+	private String body;
 	@Column(name="ref_img")
 	private String ref_img;
 	
 	
-	public Pin(int idPin, String latlng, String titolo, String corpo, String ref_img) {
+	public Pin(int idPin, String latlng, String title, String body, String ref_img) {
 		setIdPin(idPin);
 		setLatlng(latlng);
-		setTitolo(titolo);
-		setCorpo(corpo);
+		setTitle(title);
+		setBody(body);
 		setRef_img(ref_img);
 		
 	}
@@ -61,20 +54,20 @@ public class Pin {
 		this.latlng = latlng;
 	}
 
-	public String getTitolo() {
-		return titolo;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getCorpo() {
-		return corpo;
+	public String getBody() {
+		return body;
 	}
 
-	public void setCorpo(String corpo) {
-		this.corpo = corpo;
+	public void setBody(String body) {
+		this.body = body;
 	}
 
 	public String getRef_img() {
@@ -86,19 +79,15 @@ public class Pin {
 	}
 	
 	
-	//Metodo per creare nuovo Pin
-	public void newEntry(Pin l) {
-	HibCon hC = new HibCon();
-	try (Session s = hC.getSessionFactory().openSession()) {
-		s.beginTransaction();
-		s.save(l);
-		s.getTransaction().commit();
-	}
-	}
-	
-	
 	//Questi sono 3 finti override di toString in modo che quando li chiamo in una 
 	// stringa mi infili solo il parametro desiderato
+	
+	/* servono ad ovviare alla differenza tra SQL e HQL, probabilmente studiando meglio HQL non si 
+	 * renderebbero necessari perché si potrebbero fare tre query differenti
+	 * che estraggono liste di singoli parametri, anzichè liste di "serie di parametri"
+	 * 
+	 * Li utilizza la classe PinHelper
+	 */
 	
 	//LatLng
 	public String LatLngToString() {
@@ -107,15 +96,15 @@ public class Pin {
 	}
 	
 	//Titolo
-	public String TitoloToString() {
-		String titolo = getTitolo().toString();
-		return titolo;
+	public String TitleToString() {
+		String title = getTitle().toString();
+		return title;
 	}
 	
 	//Corpo
-	public String CorpoToString() {
-		String corpo = getCorpo().toString();
-		return corpo;
+	public String BodyToString() {
+		String body = getBody().toString();
+		return body;
 	}
 	
 	

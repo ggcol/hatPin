@@ -16,19 +16,19 @@ import org.hibernate.Session;
 
 
 @Entity
-@Table(name="utente")
-public class Utente {
+@Table(name="user")
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idUtente")
-	private int idUtente;
+	@Column(name="idUser")
+	private int idUser;
 	@Column(name="username")
 	private String username;
-	@Column(name="nome")
-	private String nome;
-	@Column(name="cognome")
-	private String cognome;
+	@Column(name="name")
+	private String name;
+	@Column(name="surname")
+	private String surname;
 	@Column(name="bio")
 	private String bio;
 	@Column(name="email")
@@ -36,24 +36,24 @@ public class Utente {
 	@Column(name="password")
 	private String password;
 	
-	public Utente (int idUtente, String username, String nome, String cognome, String bio, String email, String password) {
-		setIdUtente(idUtente);
+	public User (int idUser, String username, String name, String surname, String bio, String email, String password) {
+		setIdUser(idUser);
 		setUsername(username);
-		setNome(nome);
-		setCognome(cognome);
+		setName(name);
+		setSurname(surname);
 		setBio(bio);
 		setEmail(email);
 		setPassword(password);
 	}
 	
-	public Utente () {}
+	public User () {}
 
-	public int getIdUtente() {
-		return idUtente;
+	public int getIdUser() {
+		return idUser;
 	}
 
-	public void setIdUtente(int idUtente) {
-		this.idUtente = idUtente;
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
 	}
 
 	public String getUsername() {
@@ -64,20 +64,20 @@ public class Utente {
 		this.username = username;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getCognome() {
-		return cognome;
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
 	public String getBio() {

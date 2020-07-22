@@ -11,29 +11,42 @@ import it.abupro.LatLng.connection.*;
 
 public class PinHelper {
 	
-	private Pin pin;
 	
 	public PinHelper() {}
 	
-	public List<String> leggiPin() {
+	
+	//CREATE - metodo per inserimento nuovo pin
+	public void newPin(Pin l) {
+	HibCon hC = new HibCon();
+	try (Session s = hC.getSessionFactory().openSession()) {
+		s.beginTransaction();
+		s.save(l);
+		s.getTransaction().commit();
+	}
+	}
+	
+	//READ - metodo per leggere i pin e restituire una lista di singoli parametri dei pin come stringhe
+	public List<String> importPinFields() {
 		HibCon hL = new HibCon();
 		try (Session s = hL.getSessionFactory().openSession()) {
 			@SuppressWarnings("unchecked")
 			
 			//legge tutta la tabella Pin e la mette in una lista di oggetti Pin
-			List<Pin> lett = s.createQuery("FROM Pin").getResultList();
+			List<Pin> read = s.createQuery("FROM Pin").getResultList();
+			
+			//lista di Stringhe che accoglierà i parametri dei pin come stringhe
 			List<String> result = new LinkedList<String>();
 		
-			//Inserisce nella lista result i vari parametri necessari al costruttore Pin
+			//Inserisce nella lista result i vari parametri necessari al costruttore .js Pin
 			//sotto forma di singole Stringhe
-			for (Pin item : lett) {
+			for (Pin item : read) {
 				String latlng = item.LatLngToString();
-				String titolo = item.TitoloToString();
-				String corpo = item.CorpoToString();
+				String title = item.TitleToString();
+				String body = item.BodyToString();
 				
 				result.add(latlng);
-				result.add(titolo);
-				result.add(corpo);
+				result.add(title);
+				result.add(body);
 				
 			}
 			
