@@ -35,8 +35,12 @@ public class User {
 	private String email;
 	@Column(name="password")
 	private String password;
+	@Column(name="birthdate")
+	private String birthdate;
+	@Column(name="gender")
+	private String gender;
 	
-	public User (int idUser, String username, String name, String surname, String bio, String email, String password) {
+	public User (int idUser, String username, String name, String surname, String bio, String email, String password, String birthdate, String gender) {
 		setIdUser(idUser);
 		setUsername(username);
 		setName(name);
@@ -44,6 +48,8 @@ public class User {
 		setBio(bio);
 		setEmail(email);
 		setPassword(password);
+		setBirthdate(birthdate);
+		setGender(gender);
 	}
 	
 	public User () {}
@@ -103,6 +109,23 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(String birthdate) {
+		this.birthdate = birthdate;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
 	
 	
 	

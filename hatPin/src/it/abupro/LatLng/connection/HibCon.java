@@ -28,22 +28,24 @@ public class HibCon {
 	 * Tabella pin
 	 * colonne:
 	 * 
-	 * idPin
-	 * latlng
-	 * titolo
-	 * corpo
-	 * ref_img
+	 * idPin INT
+	 * latlng VARCHAR(255)
+	 * title VARCHAR(255)
+	 * body MEDIUMTEXT
+	 * ref_img VARCHAR(255) 
 	 * 
 	 * Tabella utente
 	 * colonne:
 	 * 
-	 * idUtente
-	 * username
-	 * nome
-	 * cognome
-	 * bio
-	 * email
-	 * password
+	 * idUtente INT
+	 * username VARCHAR(255)
+	 * name VARCHAR (255)
+	 * surname VARCHAR(255)
+	 * bio MEDIUMTEXT
+	 * email VARCHAR(255)
+	 * password VARCHAR (255)
+	 * birthdate VARCHAR (45)
+	 * gender VARCHAR (45)
 	 */
 }
 

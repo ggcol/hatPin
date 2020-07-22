@@ -1,0 +1,44 @@
+body {
+  background-image: url("../immagini/pins.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+.generico {
+  margin: auto;
+  margin-top: 30px;
+  width: 400px;
+  margin-bottom: 80px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #212529;
+}
+.text {
+  color: #212529;
+}
+#titolo {
+  margin: auto;
+  margin-top: 80px;
+  width: 400px;
+  text-align: center;
+}
+#submitButton {
+  float: right;
+}
+.circle {
+    margin: auto;
+    width:150px;
+    height:150px;
+    border-radius:250px;
+    line-height:500px;
+    text-align:center;
+    background:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #212529;
+}
+#nomeApp {
+}
+.btn-danger {
+  background-color: #212529;
+}

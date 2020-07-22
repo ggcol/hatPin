@@ -28,11 +28,14 @@ public class SignIn extends HttpServlet {
 		u1.setUsername(request.getParameter("username"));
 		u1.setName(request.getParameter("name"));
 		u1.setSurname(request.getParameter("surname"));
-		//manca data di nascita
+		u1.setBirthdate(request.getParameter("birthdate"));
 		u1.setEmail(request.getParameter("email"));
 		u1.setPassword(request.getParameter("password"));
+		u1.setGender(request.getParameter("gender"));
 		
 		uH.newUser(u1);
+		
+		response.sendRedirect("index.html");
 	}
 
 }
