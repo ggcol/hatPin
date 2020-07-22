@@ -1,19 +1,26 @@
 body {
-  background-image: url("../immagini/pins.jpg");
-  background-size: auto;
-  background-repeat: no-repeat;
+  background-image: url("../immagini/sfondoHatPin.jpg");
+  background-size: 100%;
+  background-repeat: repeat;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100vw;
+
 }
 .generico {
   margin: auto;
-  margin-top: 30px;
+  margin-top: 150px;
   width: 400px;
   margin-bottom: 80px;
   font-size: 25px;
   font-weight: bold;
-  color: #212529;
+
 }
 .text {
-  color: #212529;
+  color: #038C5A;
+
+
 }
 #titolo {
   margin: auto;
@@ -35,10 +42,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid #212529;
+    border: 3px solid #038C5A;
 }
 #nomeApp {
 }
 .btn-danger {
-  background-color: #212529;
+  background-color: #038C5A;
+}
+.bg-custom {
+  background-color: #F2C6A0;
 }
