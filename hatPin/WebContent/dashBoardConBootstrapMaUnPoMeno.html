@@ -50,6 +50,7 @@ html, body {
 	font-style: normal;
 	font-family: sans-serif;
 	text-align: center;
+	display: none;
 
 }
 #map {
@@ -110,6 +111,10 @@ html, body {
 			  </div>
 			</div>
 		</div>
+	<!-- contenitore logo -->
+		<div class="card bg-custom" id="logoHatPin">
+			<img src="immagini/pin.jpg" class="card-img-top" alt="...">
+	</div>
 	<!-- inizializzazione della mappa con coordinate sede Begear Milano -->
 	<!-- .setView([45.483388, 9.200729], 13) -->
 	<script>
@@ -131,8 +136,11 @@ html, body {
 	<script>var provaMarker = L.marker([45.4446143, 9.2084152]).addTo(myMap);
     provaMarker.bindPopup("<b>Qua avevo il locale</b><br>");
 </script>
-	<!-- prova lettura pin -->
 	<script>
+	document.getElementById("map").onclick = function() {
+		document.getElementById("logoHatPin").style.display = "none";
+		document.getElementById("formDash").style.display = "block";
+	}
 </script>
 	<!-- prova interazione per add pin -->
 	<script>
