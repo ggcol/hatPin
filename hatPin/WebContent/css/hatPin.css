@@ -52,3 +52,16 @@ body {
 .bg-custom {
   background-color: #F2C6A0;
 }
+.bg-custom2 {
+  background-color: #038C5A;
+}
+.navbar-dark {
+  font-style: bold;
+  color: #038C5A;
+  font-family: sans-serif;
+  opacity: 85%;
+}
+.navbar .navbar-text {
+    font-style: bold;
+    color: #038C5A;
+}

@@ -27,51 +27,42 @@
 
 <!-- stile contenitore mappa-->
 <style>
-<!-- questa sotto è per eliminare lo scroll dalla pagina-->
-
-html, body {
-	margin: 0;
-	height: 100%;
-	overflow: hidden}
 
 #pageBody{
-	margin-top: 0;
+	margin-top: 100px;
+	height: 100%;
 	width: 100%;
 	margin-left: 0;
+	margin-right: 0;
 
 }
 #formDash{
 	float: right;
-	width: 25%;
-	height: 100vw;
-	margin-left: 0%;
-	margin-right: 0%;
-	opacity: 90%;
-	font-style: normal;
-	font-family: sans-serif;
-	text-align: center;
+	width: 100%;
 
 }
 #map {
-	height: 100vw;
-	width: 75%;
-	border-left: solid;
-	border-right: solid;
+	height: 100%;
+	width: 100%;
+	border-style: solid;
 	border-color: #038C5A;
-	margin-left: 0%;
-	margin-right: 0%;
+	margin-left: 0;
 	float: left;
 }
 
 </style>
+
 </head>
+
 <body>
+
 <!-- navbar -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-custom2">
+	<nav class="navbar navbar-expand-lg navbar-light bg-custom2">
 	  <a class="navbar-brand" href="dashboard.html">Home</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
+
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
@@ -84,32 +75,34 @@ html, body {
 	    </form>  -->
 	  </div>
 	</nav>
-	<div id="pageBody">
+	<div id="pageBody" class="container">
 		<!-- contenitore mappa -->
-		<div id="map"></div>
+		<div class="row">
+	<div class="col">	<div id="map"></div>
+			</div>
 			<!-- contenitore form -->
-			<div class="card bg-custom" id="formDash">
-			  <img src="immagini/pin.jpg" class="card-img-top" alt="...">
-				<div  class="text">
-					<form action="insertPin" method="post" enctype="multipart/form-data">
-				  <div class="form-group">
-				    <label for="title"><b>Titolo</b></label>
-				    <input type="text" class="form-control" id="title" name="titolo">
-				  </div>
-					<div class="form-group">
-    			<label for="body"><b>Cosa vuoi raccontare?</b></label>
-    		<textarea class="form-control" id="body" name="body" rows="2"></textarea>
-  			</div>
-					<div class="form-group">
-				    <label for="ref_img"><b>Photo</b></label>
-				    <input type="file" class="form-control" id="ref_img" name="ref_img" accept="image/*">
-				  </div>
- 				<button type="submit" class="btn btn-danger btn-outline-light">Submit</button>
-				</form>
-				</div>
+<div class="col">
+			<div id="formDash">
+				<form action="insertPin" method="get">
+			  <div class="form-group">
+			    <label for="title">Titolo</label>
+			    <input type="text" class="form-control" id="title" name="titolo">
 			  </div>
+			  <div class="form-group">
+			    <label for="body">Cosa vuoi raccontare?</label>
+			    <input type="text" class="form-control" id="body" name="body">
+					<input type="hidden" id="latlng" name="latlng">
+			  </div>
+				<div class="form-group">
+			    <label for="ref_img">Photo</label>
+			    <input type="file" class="form-control" id="ref_img" name="ref_img" accept="image/*">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+			</div>
 			</div>
 		</div>
+	</div>
 	<!-- inizializzazione della mappa con coordinate sede Begear Milano -->
 	<!-- .setView([45.483388, 9.200729], 13) -->
 	<script>
@@ -127,26 +120,35 @@ html, body {
         accessToken: 'pk.eyJ1IjoicmVkcm92ZXIiLCJhIjoiY2tjb3VkMnI5MG9uaTJ4bGZkcHpuZTVoaSJ9.D9NLoVyZKNt4Cai3QVQlGg'
     }).addTo(myMap);
 </script>
+
 	<!-- aggiungo pin -->
 	<script>var provaMarker = L.marker([45.4446143, 9.2084152]).addTo(myMap);
-    provaMarker.bindPopup("<b>Qua avevo il locale</b><br>");
+    provaMarker.bindPopup("<b>Qua avevo il locale</b><br>Dio bestia.");
 </script>
+
 	<!-- prova lettura pin -->
 	<script>
+
 </script>
+
 	<!-- prova interazione per add pin -->
 	<script>
     var newMarker = L.marker();
+
 function onMapClick(e) {
     newMarker
         .setLatLng(e.latlng)
         .bindPopup("Aggiungi un nuovo pin con l'apposito form")
         .addTo(myMap)
         document.getElementById("latlng").innerHTML = (e.latlng.lat + ", " + e.latlng.lng);
-}myMap.on('click', onMapClick);
+}
+
+myMap.on('click', onMapClick);
+
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 </html>
