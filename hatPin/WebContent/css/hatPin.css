@@ -51,6 +51,15 @@ body {
 .btn-info{
   background-color: #d93223;
 }
+.btn-info:hover{
+  background-color: #d9751e;
+}
+.btn-info:active{
+  background-color: #d9751e;
+}
+.btn-info:focus{
+  background-color: #d9751e;
+}
 .bg-custom {
   background-color: #F2C6A0;
 }
@@ -79,8 +88,7 @@ body {
   position: relative;
   left: 5px;
   top: 5px;
-  margin: 12px;
-
+  margin: 12px;  
 }
 
 #navHome{
