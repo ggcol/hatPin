@@ -34,39 +34,28 @@
 				name="name" class="form-control" id="name">
 			</div>
 			<div class="form-group">
-				<label class="text" for="cognome">Cognome</label> <input
-				name="cognome"  class="form-control" id="cognome">
+				<label class="text" for="surname">Cognome</label> <input
+				name="surname"  class="form-control" id="surname">
 			</div>
 			<div class="form-group"> <!-- Date input -->
 				<label class="text" for="date">Data di nascita</label>
-				<input class="form-control" id="date" name="date" placeholder="MM/GG/AAA" type="text"/>
+				<input class="form-control" id="date" name="date" placeholder="MM/GG/AAAA" type="text"/>
 			</div>
 			<div class="form-group">
 				<label class="text" for="exampleInputEmail1">Email address</label> <input
 				type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
 			</div>
 			<div class="form-group">
-				<label class="text" for="exampleInputPassword1">Password</label> <input
-				type="password" name="password" class="form-control" id="password">
+				<label class="text" for="password1">Password</label> <input
+				type="password" name="password1" class="form-control" id="password1">
 			</div>
 			<div class="form-group">
-				<label class="text" for="exampleInputPassword1">Confirm
-					Password</label> <input type="password" name="password1"
-					class="form-control" id="password1">
+				<label class="text" for="password2">Confirm Password</label> 
+				<input type="password" name="password2" class="form-control" id="password2">
 				</div>
 				<button type="submit" class="btn btn-danger btn-outline-light" id="submitButton">Submit</button>
 			</form>
 		</div>
-		<script>
-		var url_string = window.location.href
-		var url = new URL(url_string);
-		var valore_parametro = url.searchParams.get("passwordcheck");
-		alarmPassword();
-		function alarmPassword() {
-			if passwordcheck=false {
-				alert("devi inserire due password identiche");}
-			}
-			</script>
 			<script>
 			$(document).ready(function(){
 				var date_input=$('input[name="date"]'); //our date input has the name "date"

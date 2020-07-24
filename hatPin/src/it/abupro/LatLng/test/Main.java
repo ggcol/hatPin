@@ -24,7 +24,7 @@ public class Main {
 			System.out.println(param4Marker.get(i+1).toString());
 			System.out.println(param4Marker.get(i+2).toString());
 		}
----------------------------------------------------------------------------------*/
+------------------------------------OK-----------------------------------------*/
 		
 		
 /*----------- test funzionamento metodo autenticazione utente -----------	
@@ -36,12 +36,12 @@ public class Main {
 		
 		
 	
----------------------------------------------------------------------------*/
+-------------------------------------OK-----------------------------------*/
 		
 /*----------- test funzionamento metodo controllo dato unico -----------	
 		UserHelper uH = new UserHelper();
 		String usr = "ciccio"; //inputToCheck 1
-		String email = "colombo.g@yandex.com"; //inputToCheck 2
+		String email = "prova@prova.com"; //inputToCheck 2
 		
 		boolean AEUsr = uH.alredyExist("username", usr);
 		if (AEUsr == true) {
@@ -57,7 +57,7 @@ public class Main {
 			System.out.println("email disponibile");
 		}
 	
----------------------------------------------------------------------------*/
+-------------------------------------OK-----------------------------------*/
 		
 		
 	}

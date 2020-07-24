@@ -18,7 +18,8 @@ public class UserHelper {
 	/*-----------------------------------------------------------------*/
 	
 	//READ - controllo dato unico, parametrizzato
-	// reference = colonna tabella, inputToCheck il dato da confrontare con quelli in colonna
+	// reference = colonna tabella 
+	// inputToCheck il dato da confrontare con quelli già in colonna
 	public boolean alredyExist (String reference, String inputToCheck) {
 		HibCon hRAlredyExist = new HibCon();
 		boolean value;
@@ -36,6 +37,19 @@ public class UserHelper {
 		}
 	}
 	
+	//READ - controllo due password uguali
+	public boolean checkPassword (String psw1, String psw2) {
+		boolean value;
+		//case sensitive
+		if (psw1.equals(psw2)) {
+			value=true;
+		} else {
+			value=false;
+		}
+		return value;
+	}
+	
+	
 	//CREATE - aggiunge nuovo Utente
 	public void newUser(User u) {
 		HibCon hCNewUser = new HibCon();
@@ -45,6 +59,7 @@ public class UserHelper {
 			s.getTransaction().commit();
 		}
 	}
+	
 	
 	
 	/* ------------------------ LOGIN ---------------------------------*/

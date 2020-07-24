@@ -16,8 +16,8 @@ public class PinHelper {
 	
 	//CREATE - metodo per inserimento nuovo pin
 	public void newPin(Pin l) {
-	HibCon hC = new HibCon();
-	try (Session s = hC.getSessionFactory().openSession()) {
+	HibCon hCNewPin = new HibCon();
+	try (Session s = hCNewPin.getSessionFactory().openSession()) {
 		s.beginTransaction();
 		s.save(l);
 		s.getTransaction().commit();
@@ -26,8 +26,8 @@ public class PinHelper {
 	
 	//READ - metodo per leggere i pin e restituire una lista di singoli parametri dei pin come stringhe
 	public List<String> importPinFields() {
-		HibCon hL = new HibCon();
-		try (Session s = hL.getSessionFactory().openSession()) {
+		HibCon hLimportPinFields = new HibCon();
+		try (Session s = hLimportPinFields.getSessionFactory().openSession()) {
 			@SuppressWarnings("unchecked")
 			
 			//legge tutta la tabella Pin e la mette in una lista di oggetti Pin

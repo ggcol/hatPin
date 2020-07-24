@@ -31,7 +31,7 @@ public class LogIn extends HttpServlet {
 		
 		if (checkUP == true)  {
 		//se la concordanza username-password è verificata invia a dashboard
-			response.sendRedirect("dashboard.html");
+			response.sendRedirect("dashbBoardConBootstrapMaUnPoMeno.html");
 		} else {
 		//se la concordanza username-password NON è verificata restituisce un errore sulla pagina
 			response.getOutputStream().println("Qualcosa è andato storto, \n<b>verifica la correttezza dei dati inseriti!</b>");
