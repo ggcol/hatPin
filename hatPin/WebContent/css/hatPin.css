@@ -44,10 +44,12 @@ body {
     align-items: center;
     border: 3px solid #038C5A;
 }
-#nomeApp {
-}
+
 .btn-danger {
   background-color: #038C5A;
+}
+.btn-info{
+  background-color: #d93223;
 }
 .bg-custom {
   background-color: #F2C6A0;
@@ -55,13 +57,54 @@ body {
 .bg-custom2 {
   background-color: #038C5A;
 }
+.bg-custom3 {
+  background-image: linear-gradient(15deg, #038C5A 0%, #F2C6A0 100%);
+
+}
 .navbar-dark {
   font-style: bold;
   color: #038C5A;
   font-family: sans-serif;
   opacity: 85%;
+  border-style: solid;
+	border-color: #038C5A;
 }
 .navbar .navbar-text {
     font-style: bold;
     color: #038C5A;
+}
+.navItem{
+  padding: 6px;
+  float: left;
+  position: relative;
+  left: 5px;
+  top: 5px;
+  margin: 12px;
+
+}
+
+#navHome{
+  padding-left: 40px;
+  padding-right: 40px;
+  font-weight: bold;
+
+}
+#navBacheca{
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+#navProfilo{
+
+  padding-left: 39px;
+  padding-right: 39px;
+}
+#navImpostazioni{
+  padding-left: 17px;
+  padding-right: 17px;
+
+}
+#navPin{
+  padding-left: 50px;
+  padding-right: 50px;
 }

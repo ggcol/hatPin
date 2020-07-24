@@ -40,22 +40,10 @@ html, body {
 	margin-left: 0;
 
 }
-#formDash{
-	float: right;
-	width: 25%;
-	height: 100vw;
-	margin-left: 0%;
-	margin-right: 0%;
-	opacity: 90%;
-	font-style: normal;
-	font-family: sans-serif;
-	text-align: center;
-	display: none;
 
-}
 #map {
 	height: 100vw;
-	width: 75%;
+	width: 100%;
 	border-left: solid;
 	border-right: solid;
 	border-color: #038C5A;
@@ -63,13 +51,31 @@ html, body {
 	margin-right: 0%;
 	float: left;
 }
+#formDash{
+	float: right;
+	width: 25%;
+	height: 80%;
+	margin-left: 0%;
+	margin-right: 0%;
+	opacity: 90%;
+	font-style: normal;
+	font-family: sans-serif;
+	text-align: center;
+	display: none;
+}
+#imagePinHub{
+	width: 70%;
+	height: 70%;
+}
 
 </style>
 </head>
 <body>
 <!-- navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-custom3">
-		<button class="btn btn-outline-light my-2 my-sm-2 navItem" id="navHome" type="button" onclick="location.href='dashboard.html'">Home</button>
+		<button class="btn btn-light my-2 my-sm-2 navItem" id="navHome" type="button" onclick="location.href='dashboardHatPin.html'">
+			hat<font color = #D93223>P</font>in
+		</button>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -86,7 +92,7 @@ html, body {
 	      </li>
 	    </ul>
 			<form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success my-2 my-sm-0 navItem" id="navPin" type="button" onclick="location.href='impostazioni.html'">Pin</button>
+      <button class="btn btn-info my-2 my-sm-0 navItem" id="navPin" type="button" onclick="location.href='impostazioni.html'">Pin</button>
     </form>
 <!--     <form class="form-inline my-2 my-lg-0">
 	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -97,32 +103,29 @@ html, body {
 	<div id="pageBody">
 		<!-- contenitore mappa -->
 		<div id="map"></div>
-			<!-- contenitore form -->
-			<div class="card bg-custom" id="formDash">
-			  <img src="immagini/pin.jpg" class="card-img-top" alt="...">
-				<div  class="text">
-					<form action="insertPin" method="post" enctype="multipart/form-data">
-				  <div class="form-group">
-				    <label for="title"><b>Titolo</b></label>
-				    <input type="text" class="form-control" id="title" name="titolo">
-				  </div>
-					<div class="form-group">
-    			<label for="body"><b>Cosa vuoi raccontare?</b></label>
-    		<textarea class="form-control" id="body" name="body" rows="2"></textarea>
-  			</div>
-					<div class="form-group">
-				    <label for="ref_img"><b>Photo</b></label>
-				    <input type="file" class="form-control" id="ref_img" name="ref_img" accept="image/*">
-				  </div>
- 				<button type="submit" class="btn btn-danger btn-outline-light">Submit</button>
-				</form>
+
+		<!-- contenitore form -->
+		<div class="card bg-custom" id="formDash">
+			<img src="immagini/pin.jpg" class="card-img-top" id="imagePinHub"alt="...">
+			<div  class="text">
+				<form action="insertPin" method="post" enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="title"><b>Titolo</b></label>
+					<input type="text" class="form-control" id="title" name="titolo">
 				</div>
-			  </div>
+				<div class="form-group">
+				<label for="body"><b>Cosa vuoi raccontare?</b></label>
+			<textarea class="form-control" id="body" name="body" rows="2"></textarea>
+			</div>
+				<div class="form-group">
+					<label for="ref_img"><b>Photo</b></label>
+					<input type="file" class="form-control" id="ref_img" name="ref_img" accept="image/*">
+				</div>
+			<button type="submit" class="btn btn-danger btn-outline-light">Submit</button>
+			</form>
+			</div>
 			</div>
 		</div>
-	<!-- contenitore logo -->
-		<div class="card bg-custom" id="logoHatPin">
-			<img src="immagini/pin.jpg" class="card-img-top" alt="...">
 	</div>
 	<!-- inizializzazione della mappa con coordinate sede Begear Milano -->
 	<!-- .setView([45.483388, 9.200729], 13) -->
@@ -145,12 +148,31 @@ html, body {
 	<script>var provaMarker = L.marker([45.4446143, 9.2084152]).addTo(myMap);
     provaMarker.bindPopup("<b>Qua avevo il locale</b><br>");
 </script>
-	<script>
-	document.getElementById("map").onclick = function() {
-		document.getElementById("logoHatPin").style.display = "none";
-		document.getElementById("formDash").style.display = "block";
-
-	}
+	<!--riduco la mappa e faccio entrare la form -->
+<script>
+var isOpen = false;
+document.getElementById("navPin").onclick = function() {
+/*
+	if(isOpen){
+		//chiudo
+		hide();
+		isOpen = false;
+	} else {
+		//navProfilo
+		show();
+		isOpen = true;
+	}*/
+	isOpen ? hide() : show();
+	isOpen = !isOpen;
+}
+function show(){
+	document.getElementById("map").style.width = "75%";
+	document.getElementById("formDash").style.display = "block";
+}
+function hide(){
+	document.getElementById("map").style.width = "100%";
+	document.getElementById("formDash").style.display = "none";
+}
 </script>
 	<!-- prova interazione per add pin -->
 	<script>
