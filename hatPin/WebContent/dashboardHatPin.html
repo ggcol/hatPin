@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Stylesheet di bootstrap-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!-- Custom styles for this template -->
+<link href="css/simple-sidebar.css" rel="stylesheet">
 <!--nostro css-->
 <link rel="stylesheet" type="text/css" href="css/hatPin.css">
 <!-- style sheet leaflet-->
@@ -23,7 +25,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<title>-- PROVA MAPPA --</title>
+<title>-- HatPin dashboardHatPin --</title>
 
 <!-- stile contenitore mappa-->
 <style>
@@ -38,18 +40,6 @@ html, body {
 	margin-top: 0;
 	width: 100%;
 	margin-left: 0;
-
-}
-
-#map {
-	height: 100vw;
-	width: 100%;
-	border-left: solid;
-	border-right: solid;
-	border-color: #038C5A;
-	margin-left: 0%;
-	margin-right: 0%;
-	float: left;
 }
 #formDash{
 	float: right;
@@ -64,9 +54,8 @@ html, body {
 	display: none;
 	overflow: auto;
 }
-#imagePinHub{
-	height: 40%;
-}
+
+
 
 </style>
 </head>
@@ -92,7 +81,7 @@ html, body {
 	      </li>
 	    </ul>
 			<form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-info my-2 my-sm-0 navItem" id="navPin" type="button" onclick="location.href='impostazioni.html'">Pin</button>
+      <button class="btn btn-info my-2 my-sm-0 navItem" id="navPin" type="button">Pin</button>
     </form>
 <!--     <form class="form-inline my-2 my-lg-0">
 	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -104,31 +93,8 @@ html, body {
 		<!-- contenitore mappa -->
 		<div id="map"></div>
 
-		<!-- contenitore form -->
-		<div class="card bg-custom" id="formDash">
-			<img src="immagini/pin.jpg" class="card-img-top" id="imagePinHub"alt="...">
-			<div  class="text">
-				<form action="insertPin" method="post" enctype="multipart/form-data">
-				<div class="form-group">
-					<label for="title"><b>Titolo</b></label>
-					<input type="text" class="form-control" id="title" name="titolo">
-				</div>
-				<div class="form-group">
-				<label for="body"><b>Cosa vuoi raccontare?</b></label>
-			<textarea class="form-control" id="body" name="body" rows="2"></textarea>
-			</div>
-				<div class="form-group">
-					<label for="ref_img"><b>Photo</b></label>
-					<input type="file" class="form-control" id="ref_img" name="ref_img" accept="image/*">
-				</div>
-			<button type="submit" class="btn btn-danger btn-outline-light">Submit</button>
-			</form>
-			</div>
-			</div>
-		</div>
-	</div>
-	<!-- inizializzazione della mappa con coordinate sede Begear Milano -->
-	<!-- .setView([45.483388, 9.200729], 13) -->
+
+
 	<script>
     var myMap = L.map('map').locate({setView: true, maxZoom: 16});
 </script>
@@ -144,11 +110,10 @@ html, body {
         accessToken: 'pk.eyJ1IjoicmVkcm92ZXIiLCJhIjoiY2tjb3VkMnI5MG9uaTJ4bGZkcHpuZTVoaSJ9.D9NLoVyZKNt4Cai3QVQlGg'
     }).addTo(myMap);
 </script>
-	<!-- aggiungo pin -->
-	<script>var provaMarker = L.marker([45.4446143, 9.2084152]).addTo(myMap);
-    provaMarker.bindPopup("<b>Qua avevo il locale</b><br>");
-</script>
+
+
 	<!--riduco la mappa e faccio entrare la form -->
+<!--
 <script>
 var isOpen = false;
 document.getElementById("navPin").onclick = function() {
@@ -173,8 +138,8 @@ function hide(){
 	document.getElementById("map").style.width = "100%";
 	document.getElementById("formDash").style.display = "none";
 }
-</script>
-	<!-- prova interazione per add pin -->
+</script>-->
+	<!-- script interazione utente-pin -->
 	<script>
     var newMarker = L.marker();
 function onMapClick(e) {
@@ -182,10 +147,10 @@ function onMapClick(e) {
         .setLatLng(e.latlng)
         .bindPopup("Aggiungi un nuovo pin con l'apposito form")
         .addTo(myMap)
-        document.getElementById("latlng").innerHTML = (e.latlng.lat + ", " + e.latlng.lng);
+        document.getElementById("latlng").value = (e.latlng.lat.toString() + ", " + e.latlng.lng.toString());
 }myMap.on('click', onMapClick);
-</script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	</script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
