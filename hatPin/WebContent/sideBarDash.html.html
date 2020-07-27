@@ -35,20 +35,20 @@ html, body {
   <div  class="text">
   <div id="formSide">
     <form action="insertPin" method="post" enctype="multipart/form-data">
-    <div class="form-group">
+    <div class="sideNavForm" class="form-group">
       <label for="title"><b>Titolo</b></label>
       <input type="text" class="form-control" id="title" name="title">
     </div>
-    <div class="form-group">
+    <div class="sideNavForm" class="form-group">
     <label for="body"><b>Cosa vuoi raccontare?</b></label>
   <textarea class="form-control" id="body" name="body" rows="2"></textarea>
   </div>
     <div class="form-group">
       <label for="file"><b>Photo</b></label>
-      <input type="file" class="form-control" id="file" name="file" accept="image/*">
+      <input class="sideNavForm" type="file" class="form-control" id="file" name="file" accept="image/*">
       <input type="hidden" value=""  id="latlng" name="latlng">
     </div>
-  <button type="submit" class="btn btn-danger btn-outline-light">Submit</button>
+  <button id="pinButton" type="submit" class="btn btn-danger btn-outline-light">Pin it!</button>
   </form></div>
   </div>
   </div>
@@ -98,10 +98,10 @@ html, body {
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Menu Toggle Script -->
   <script>
-    $("#wrapper").toggleClass("hidden");
+  $("#wrapper").toggleClass("toggled");
     $("#navPin").click(function(e) {
       e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
+    $("#wrapper").toggleClass("toggled");
     });
   </script>
   <script>
