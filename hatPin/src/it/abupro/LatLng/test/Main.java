@@ -1,5 +1,12 @@
 package it.abupro.LatLng.test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,7 +15,7 @@ import it.abupro.LatLng.function.*;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
 /* ---------- era una prova per estrarre i dati pin immagazzinati su DB ------------ 
@@ -58,7 +65,41 @@ public class Main {
 		}
 	
 -------------------------------------OK-----------------------------------*/
+
 		
+/*----------- test funzionamento crea nuovo file in dir -----------	
+		String path = "WebContent/PinPictures";
+		
+		try {
+			OutputStream out = new FileOutputStream(new File(path+"/"+"prova.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+-------------------------------------OK-----------------------------------*/
+		
+/*----------- test funzionamento crea nuovo file in dir -----------	*/
+//		InputStream fileIn = null;
+//		FileOutputStream fileOut = null;
+//		
+//		try {
+//		fileIn = new FileInputStream("C:\\Users\\ggcol\\Desktop\\dragonOnPinnacle.jpg");
+//		fileOut = new FileOutputStream("C:\\Users\\ggcol\\git\\hatPin\\hatPin\\WebContent\\PinPictures\\dragonOnPinnacle.jpg");
+//		
+//		byte[] buffer = new byte[4096];
+//		int byteLetti;
+//		
+//		while((byteLetti = fileIn.read(buffer)) >= 0) {
+//			fileOut.write(buffer, 0, byteLetti);
+//		}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		finally {
+//			if (fileIn != null) fileIn.close();
+//			if (fileOut != null) fileOut.close();
+//			
+//		}
 		
 	}
 }

@@ -1,7 +1,15 @@
 package it.abupro.LatLng.function;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.servlet.http.Part;
 
 import org.hibernate.Session;
 
@@ -55,7 +63,47 @@ public class PinHelper {
 		}
 	}
 	
+	public String uploadImg(Part part) {
+		final String PATH = "C:\\Users\\ggcol\\git\\hatPin\\hatPin\\WebContent\\PinPictures";
+		//mette in una stringa il nome del file come inserito da utente
+		String nameImg = part.getSubmittedFileName();
+		try{
+			//descrive il path dove finirà l'immagine
+		
+		InputStream in = null;
+		OutputStream out = null;
+		
+		try {
+			//prende le parti inviate da http come input stream
+			in = part.getInputStream();
+			out = new FileOutputStream(new File(PATH+"\\"+nameImg));
+			
+			//buffer!
+			byte[] buffer = new byte[4096];
+			int read;
+			
+			//scrive i byteletti nella destinazione di output
+			while ((read = in.read(buffer)) >= 0) {
+				out.write(buffer, 0, read);
+			}
+			} catch (FileNotFoundException e) {
+				System.out.println("L'utente non ha selezionato un immagine valida");
+			} finally {
+				if (out != null) {
+					out.close();
+				} 
+				if (in != null) {
+					in.close();
+				}
+			}
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		String ref_img = (PATH+"\\"+nameImg);
+		//ritorna percorso assoluto dove c'è immagine
+		return ref_img;
+	}
 	
 	
-
+	//chiude classe
 }

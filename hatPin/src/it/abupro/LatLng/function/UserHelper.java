@@ -79,7 +79,6 @@ public class UserHelper {
 			String PswDB = conPsw.toString();
 			String UsrDB = conUsr.toString();
 			
-			
 			if (PswDB.equals(password) && UsrDB.equals(username)) {
 				value=true;
 			} else {
@@ -90,6 +89,15 @@ public class UserHelper {
 			return value;
 		}
 	
+	}
+	
+	
+	/* ------------------------ SETTINGS -------------------------------*/
+	/*-----------------------------------------------------------------*/
+	
+	//UPDATE - modifica parametri Utente
+	public void updateUser(String reference, String newValue) {
+		
 	}
 
 }
