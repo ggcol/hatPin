@@ -18,7 +18,7 @@ body {
 	width: 100%;
 	border-left: solid;
 	border-right: solid;
-	border-color: #038C5A;
+/*	border-color: #038C5A;*/
 }
 #formSide{
   height: 100%;
@@ -85,8 +85,9 @@ body {
   color: #038C5A;
   font-family: sans-serif;
   opacity: 85%;
-  border-style: solid;
-	border-color: #038C5A;
+/*border-style: solid;
+	border-color: #038C5A; */
+
 }
 .navbar .navbar-text {
     font-style: bold;
@@ -164,7 +165,10 @@ body {
   padding: 20px;
   background-image: linear-gradient(15deg, #038C5A 0%, #F2C6A0 100%);
   font-weight: bold;
+  border-radius:4150px;
+  color: white;
 }
 #pinButton:hover{
   background-image: linear-gradient(15deg, #F2C6A0 0%, #038C5A 100%);
+  color: #d93223;
 }
