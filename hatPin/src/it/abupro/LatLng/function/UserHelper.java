@@ -3,6 +3,8 @@ package it.abupro.LatLng.function;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 
 import it.abupro.LatLng.connection.*;
@@ -40,7 +42,7 @@ public class UserHelper {
 	//READ - controllo due password uguali
 	public boolean checkPassword (String psw1, String psw2) {
 		boolean value;
-		//case sensitive
+		//(ovviamente) case sensitive
 		if (psw1.equals(psw2)) {
 			value=true;
 		} else {
@@ -96,8 +98,29 @@ public class UserHelper {
 	/*-----------------------------------------------------------------*/
 	
 	//UPDATE - modifica parametri Utente
-	public void updateUser(String reference, String newValue) {
-		
+	// reference = colonna tabella 
+	// newValue = il dato da scrivere sopra all'originale con quelli già in colonna
+	//prevede un check di "autenticazione" dell'utente che deve inserire il suo usr e la sua psw
+	public void updateUser(String reference, String newValue, String username, String password) {
+		HibCon hUUpdateUser = new HibCon();
+		try (Session s = hUUpdateUser.getSessionFactory().openSession()) {
+			UserHelper uHup = new UserHelper();
+			//controlla che usr/psw immesse corrispondano a usr/psw su DB 
+			//vedi metodo checkUP (sopra)
+			boolean check = uHup.checkUP(username, password);
+			//se l'utente è "autenticato" permette di modificare il dato dentro alla colonna reference corrispondente 
+			//allo username inserito dall'utente
+			if (check == true) {
+				Query update = s.createQuery("update Utente u set u."+reference+" = '"+newValue+"' where u.username = '"+username+"'" );
+				update.executeUpdate();
+			} else {
+			//se l'utente non è "autenticato" stampa un errore - DA SISTEMARE PER OUTPUT SU PAGINA HTML (no syso)
+				System.out.println("Username o password inseriti non sono corretti!");
+			}
+		}
 	}
 
+	
+	
+	
 }

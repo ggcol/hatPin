@@ -42,7 +42,7 @@ public class InsertPin extends HttpServlet {
 		p1.setRef_img(ref_img);
 		pH.newPin(p1);
 
-		response.sendRedirect("dashBoardConBootstrapMaUnPoMeno.html");
+		response.sendRedirect("dashBoardHatPin.html");
 
 
 
