@@ -5,8 +5,11 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
 
-public class ProvaM {
-	public ProvaM() {}
+public class DataHelper {
+	
+	public DataHelper() {}
+	
+	
 	public boolean corto(String dateToValidate){
 		boolean prova;
 
@@ -25,6 +28,7 @@ public class ProvaM {
 		}
 		return prova;
 	}
+	
 	public boolean medio(String dateToValidate){
 		boolean prova;
 
@@ -43,6 +47,7 @@ public class ProvaM {
 		}
 		return prova;
 	}
+	
 	public boolean lungo(String dateToValidate){
 		boolean prova;
 
@@ -61,13 +66,14 @@ public class ProvaM {
 		}
 		return prova;
 	}
+	
 	public boolean dataValida(String dateToValidate)
 	{
 		boolean check;
-		ProvaM uno = new ProvaM();
-		boolean corto = uno.corto(dateToValidate);
-		boolean medio = uno.medio(dateToValidate);
-		boolean lungo = uno.lungo(dateToValidate);
+		DataHelper dH = new DataHelper();
+		boolean corto = dH.corto(dateToValidate);
+		boolean medio = dH.medio(dateToValidate);
+		boolean lungo = dH.lungo(dateToValidate);
 		if(corto==true || medio==true || lungo==true)
 		{
 			check = true;

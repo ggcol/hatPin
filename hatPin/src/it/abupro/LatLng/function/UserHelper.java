@@ -22,8 +22,6 @@ public class UserHelper {
 
 	//READ - controllo dato unico, parametrizzato
 	// reference = colonna tabella, inputToCheck il dato da confrontare con quelli in colonna
-	public boolean alredyExist (String reference, String inputToCheck) 
-	{
 	// reference = colonna tabella 
 	// inputToCheck il dato da confrontare con quelli già in colonna
 	public boolean alredyExist (String reference, String inputToCheck) {
@@ -47,15 +45,18 @@ public class UserHelper {
 	//READ - controllo due password uguali
 	public boolean checkPassword (String psw1, String psw2) {
 		boolean value;
+		//psw deve avere almeno 8 (massimo 255) caratteri di cui almeno uno deve essere 
+		//un numero e uno deve essere una lettera
+		boolean regex = psw1.matches("((?=.*[0-9])(?=.*[a-zA-Z]).{8,255})");
 		//(ovviamente) case sensitive
-		if (psw1.equals(psw2)) {
+		if (psw1.equals(psw2) && regex == true) {
 			value=true;
 		} else {
 			value=false;
 		}
 		return value;
 	}
-
+	
 
 	//CREATE - aggiunge nuovo Utente
 	public void newUser(User u) {

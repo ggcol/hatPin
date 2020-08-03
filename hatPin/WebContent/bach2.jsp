@@ -16,6 +16,7 @@
 <% WallHelper wh = new WallHelper();
 LinkedList<String> read = wh.importPin4Wall(); %>
 
+
 <%! int flag = 0; %>		 
 <%  for (int i = 0; i < read.size(); i = i+5) {
 	String latlng = read.get(i);
@@ -25,6 +26,7 @@ LinkedList<String> read = wh.importPin4Wall(); %>
 	String username = read.get(i+4); 
 	flag++;
 	%>
+	
 	<div id = "latlng<%=flag%>"><p>LATLNG <%=flag %>: <%=latlng%></p></div>
 	<div id = "title<%=flag%>"><p>TITLE <%=flag %>: <%=title %></p></div>
 	<div id = "body<%=flag%>"><p>BODY <%=flag %>: <%=body %></p></div>

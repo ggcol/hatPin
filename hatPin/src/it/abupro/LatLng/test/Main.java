@@ -101,5 +101,13 @@ public class Main {
 //			
 //		}
 		
+		/*---------------test psw 2-------------------------
+		UserHelper uH = new UserHelper();
+		String psw1 = "prova2cb";
+		String psw2 = "prova2cb";
+		
+		System.out.println(uH.checkPassword(psw1, psw2));
+		------------------------------------------------ */
+		
 	}
 }

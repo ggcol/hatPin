@@ -77,6 +77,8 @@ public class SignIn extends HttpServlet {
 		u1.setName(request.getParameter("name"));
 		u1.setSurname(request.getParameter("surname"));
 		u1.setBirthdate(request.getParameter("birthdate"));
+		String birthdate = request.getParameter("birthdate");
+		
 		u1.setGender(request.getParameter("gender"));
 		
 		request.getRequestDispatcher("/registrazione.html").include(request, response);
