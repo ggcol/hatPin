@@ -1,7 +1,6 @@
 package it.abupro.LatLng.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,12 +30,12 @@ public class LogIn extends HttpServlet {
 		
 		if (checkUP == true)  {
 		//se la concordanza username-password è verificata invia a dashboard
-			response.sendRedirect("dashBoardHatPin.html");
+			response.sendRedirect("dashboardhatpin.jsp");
 		} else {
 		//se la concordanza username-password NON è verificata restituisce un errore sulla pagina
 			//bisogna aggiungere ${errore_login} nella pagina
-			request.setAttribute("errore_login", "Qualcosa è andato storto,<br>verifica la correttezza dei dati<br>inseriti!");
-			request.getRequestDispatcher("/login.html").include(request, response);
+			request.setAttribute("errore_login", "Qualcosa e' andato storto,<br>verifica la correttezza dei dati<br>inseriti!");
+			request.getRequestDispatcher("/login.jsp").include(request, response);
 			
 		}
 	

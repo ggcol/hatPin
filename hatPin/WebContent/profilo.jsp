@@ -33,7 +33,7 @@
     <% String usr = request.getParameter("username");
       if (usr != null) {%>
       <% WallHelper wh = new WallHelper();
-      LinkedList<String> read = wh.importPin4Personal(username); %>
+      LinkedList<String> read = wh.importPin4Personal(usr); %>
 
       <%! int flag = 0; %>
       <%  for (int i = 0; i < read.size(); i = i+4) {
@@ -43,8 +43,6 @@
  String ref_img = read.get(i+3);
  flag++;
  %>
-
-      	%>
        <div id="postForm" class="card">
           <div class="card-header"><h2 class="titoloPost">
             <%=title %>

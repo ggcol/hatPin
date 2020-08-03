@@ -64,6 +64,16 @@ public class PinHelper {
 		}
 	}
 	
+	public boolean latlngNotNull (String latlng) {
+		boolean check;
+		if (latlng.equals(null)) {
+			check = false;
+		} else {
+			check = true;
+		}
+		return check;
+	}
+	
 	/* ---------------------UPLOAD IMG-------------------
 	 * ritorna inoltre come stringa il path dell'immagine
 	 * che è un dato da storare su DB ------------------*/

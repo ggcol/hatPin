@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.abupro.LatLng.function.UserHelper;
+import it.abupro.LatLng.function.*;
 import it.abupro.LatLng.entities.*;
 
 /**
@@ -69,19 +69,28 @@ public class SignIn extends HttpServlet {
 			request.setAttribute("password_null", "Non hai inseito correttamente le password!");
 			//se le password non coincidono segnala errore
 		} else if (checkedP == false) {
-			request.setAttribute("password_not_equals", "Le due password non coincidono!");
+			request.setAttribute("password_not_equals", "Le due password non coincidono<br>o non rispettano i prerequisiti");
 		}
 		/*---------------------------------------------------*/
+		
+		/*-----------controllo data-------------------------*/
+		String birthdate = request.getParameter("birthdate");
+		DataHelper dH = new DataHelper();
+		boolean check = dH.dataValida(birthdate);
+		
+		if (check == true) {
+			u1.setBirthdate(birthdate);
+		} else {
+			request.setAttribute("birthdate_error", "Non hai inserito un formato di data valido!");
+		}
+		/*--------------------------------------------------*/
 
 		/*------------ aggiunge tutti gli altri parametri ------------------*/
 		u1.setName(request.getParameter("name"));
 		u1.setSurname(request.getParameter("surname"));
-		u1.setBirthdate(request.getParameter("birthdate"));
-		String birthdate = request.getParameter("birthdate");
-		
 		u1.setGender(request.getParameter("gender"));
 		
-		request.getRequestDispatcher("/registrazione.html").include(request, response);
+		request.getRequestDispatcher("/registrazione.jsp").include(request, response);
 		
 		//salva utente su DB 
 		//vedi UtenteHelper.java / SignIn / newUser()

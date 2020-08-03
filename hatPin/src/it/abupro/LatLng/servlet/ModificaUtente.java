@@ -59,12 +59,12 @@ public class ModificaUtente extends HttpServlet {
 			//se modifiche a buon fine invia msg alla pagina
 			//aggiungere ${update_profile_ok}
 			request.setAttribute("update_profile_ok", "Modifica andata a buon fine!");
-			request.getRequestDispatcher("/modificautente.jsp").include(request, response);
+			request.getRequestDispatcher("/impostazioni.jsp").include(request, response);
 		} else {
 			//se modifiche non a buon fine invia msg alla pagina
 			//aggiungere ${update_profile_not_ok"
 			request.setAttribute("update_profile_not_ok", "Le modifiche non sono andate a buon fine<br>controlla i dati inseriti!");
-			request.getRequestDispatcher("/modificautente.jsp").include(request, response);
+			request.getRequestDispatcher("/impostazioni.jsp").include(request, response);
 		}
 	}
 
