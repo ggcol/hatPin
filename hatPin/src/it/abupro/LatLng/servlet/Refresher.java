@@ -28,9 +28,7 @@ public class Refresher extends HttpServlet {
 		//oggetto per estrarre dati da DB
 		PinHelper pH = new PinHelper();
 		//Lista che accoglie risultati estrazione (Stringhe)
-		List<String> param4Marker = new LinkedList<String>();
-		//Ficco nella lista singole stringhe (vedi in classe PinHelper)
-		param4Marker = pH.importPinFields();
+		LinkedList<String> param4Marker = pH.importPinFields();
 		//Ciclo la lista per estrarre le Stringhe con i singoli "parametri" che necessita
 		//il costruttore .js dei Pin
 		for (int i = 0; i < param4Marker.size(); i = i+3) {

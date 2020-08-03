@@ -33,16 +33,14 @@ public class SignIn extends HttpServlet {
 			u1.setUsername(usr);
 			//se username è null segnala errore
 		} else if (usr == null) {
-			response.getOutputStream().println("non hai inserito uno username!");
+			request.setAttribute("user_null", "Non hai inserito uno username!");
 			//se username è già in uso segnala errore
 		} else if (usrAE == true) {
-			response.getOutputStream().println("username già in uso, prova con un altro!");
+			request.setAttribute("userAE", "Username già in uso, prova con un altro!");
 		}
 		/*---------------------------------------------------*/
 
-		/*------------ controllo email ------------------
-		 * manca controllo indirizzo email valido ("@" e ".estensione" 
-		 * decidere se farlo con js o con java */
+		/*------------ controllo email ------------------ */
 		String email = request.getParameter("email");
 		//vedi UserHelper.java / SignIn/ alredyExist()
 		boolean emailAE = uH.alredyExist("email", email);
@@ -51,10 +49,10 @@ public class SignIn extends HttpServlet {
 			u1.setEmail(email);
 			//se email è null segnala errore
 		} else if (email == null) {
-			response.getOutputStream().println("non hai inserito un indirizzo email!");
+			request.setAttribute("email_null", "Non hai inserito un indirizzo email!");
 			//se email è già in uso segnala errore
 		} else if (emailAE == true) {
-			response.getOutputStream().println("email già in uso, prova con un'altra!");
+			request.setAttribute("email_AE", "Email già in uso, prova con un'altra!");
 		}
 		/*---------------------------------------------------*/
 
@@ -68,10 +66,10 @@ public class SignIn extends HttpServlet {
 			u1.setPassword(psw1);
 			//se psw1 o psw2 sono nulla segnala errore
 		} else if (psw1 == null || psw2 == null){
-			response.getOutputStream().println("non hai inserito correttamente le password!");
+			request.setAttribute("password_null", "Non hai inseito correttamente le password!");
 			//se le password non coincidono segnala errore
 		} else if (checkedP == false) {
-			response.getOutputStream().println("le due password non coincidono");
+			request.setAttribute("password_not_equals", "Le due password non coincidono!");
 		}
 		/*---------------------------------------------------*/
 
@@ -80,7 +78,9 @@ public class SignIn extends HttpServlet {
 		u1.setSurname(request.getParameter("surname"));
 		u1.setBirthdate(request.getParameter("birthdate"));
 		u1.setGender(request.getParameter("gender"));
-
+		
+		request.getRequestDispatcher("/registrazione.html").include(request, response);
+		
 		//salva utente su DB 
 		//vedi UtenteHelper.java / SignIn / newUser()
 		uH.newUser(u1);
