@@ -37,7 +37,7 @@ public class HibCon {
 	 * Tabella utente
 	 * colonne:
 	 * 
-	 * idUtente INT PK, NN, UQ, AI
+	 * idUser INT PK, NN, UQ, AI
 	 * username VARCHAR(255) NN, UQ
 	 * name VARCHAR (255)
 	 * surname VARCHAR(255)
