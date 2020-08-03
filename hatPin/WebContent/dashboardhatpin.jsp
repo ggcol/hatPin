@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
     import = "java.util.LinkedList"
-    import = "it.abupro.LatLng.function.PinHelper" 
+    import = "it.abupro.LatLng.function.PinHelper"
     %>
-    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,13 +89,13 @@ html, body {
       	  <div class="collapse navbar-collapse my-sm-0" id="navbarSupportedContent">
       	    <ul class="navbar-nav mr-auto">
       	      <li class="nav-item active">
-      					<button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navBacheca" type="button" onclick="location.href='bacheca.html'"><span class="iconify" data-icon="si-glyph:pin-location-map" data-inline="false"></span></button>
+      					<button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navBacheca" type="button" onclick="location.href='bacheca.jsp'"><span class="iconify" data-icon="si-glyph:pin-location-map" data-inline="false"></span></button>
       	      </li>
       				<li class="nav-item active">
-      					<button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navProfilo" type="button" onclick="location.href='profilo.html'"><span class="iconify" data-icon="si-glyph:person" data-inline="false"></span></button>
+      					<button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navProfilo" type="button" onclick="location.href='profilo.jsp'"><span class="iconify" data-icon="si-glyph:person" data-inline="false"></span></button>
       	      </li>
       				<li class="nav-item active">
-      					  <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navImpostazioni" type="button" onclick="location.href='impostazioni.html'"><span class="iconify" data-icon="si-glyph:gear" data-inline="false"></span></button>
+      					  <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navImpostazioni" type="button" onclick="location.href='PaginaImpostazioni.html'"><span class="iconify" data-icon="si-glyph:gear" data-inline="false"></span></button>
       	      </li>
       	    </ul>
       			<form class="form-inline my-2 my-lg-0">
@@ -143,14 +143,14 @@ html, body {
 	<!-- aggiungo pin -->
 	<% PinHelper pH = new PinHelper();
 	LinkedList<String> read = pH.importPinFields();%>
-	
+
 	<%!int flag = 0; %>
 	<%for (int i = 0; i < read.size(); i = i+3) {
 	String latlng = read.get(i);
 	String title = read.get(i+1);
 	String body = read.get(i+2);
 	flag++;%>
-	
+
 	<script>var newMarker<%=flag%> = L.marker([<%=latlng%>]).addTo(myMap);
     newMarker<%=flag%>.bindPopup("<b><%=title%></b><br><p><%=body%></p>");
 </script>
