@@ -52,14 +52,14 @@ public class Main {
 		
 		boolean AEUsr = uH.alredyExist("username", usr);
 		if (AEUsr == true) {
-			System.out.println("username gi‡ in uso");
+			System.out.println("username gi√† in uso");
 		} else {
 			System.out.println("username disponibile");
 		}
 		
 		boolean AEEmail = uH.alredyExist("email", email);
 		if (AEEmail == true) {
-			System.out.println("email gi‡ in uso");
+			System.out.println("email gi√† in uso");
 		} else {
 			System.out.println("email disponibile");
 		}

@@ -21,19 +21,23 @@ public class UserHelper {
 	/*-----------------------------------------------------------------*/
 
 	//READ - controllo dato unico, parametrizzato
+	// reference = colonna tabella, inputToCheck il dato da confrontare con quelli in colonna
+	public boolean alredyExist (String reference, String inputToCheck) 
+	{
 	// reference = colonna tabella 
-	// inputToCheck il dato da confrontare con quelli gi‡ in colonna
+	// inputToCheck il dato da confrontare con quelli gi√† in colonna
 	public boolean alredyExist (String reference, String inputToCheck) {
 		HibCon hRAlredyExist = new HibCon();
 		boolean value;
-		try (Session s = hRAlredyExist.getSessionFactory().openSession()) {
+		try (Session s = hRAlredyExist.getSessionFactory().openSession()) 
+		{
 			@SuppressWarnings("unchecked")
 
 			//SELECT E.firstName FROM Employee E - sintassi HQL con SELECT
 			//legge la colonna "reference" e la mette in una lista di String
 			List<String> read = s.createQuery("SELECT U."+reference+" FROM User U").getResultList();
 
-			//value Ë TRUE se esiste gi‡ un'entry uguale!!
+			//value √® TRUE se esiste gi√† un'entry uguale!!
 			value = read.contains(inputToCheck);
 			return value;
 
@@ -64,13 +68,13 @@ public class UserHelper {
 	}
 
 
-
 	/* ------------------------ LOGIN ---------------------------------*/
 	/*-----------------------------------------------------------------*/
 
 
-	//READ - controllo validit‡ logIn
-	public boolean checkUP (String username, String password) {
+	//READ - controllo validit√† logIn
+	public boolean checkUP (String username, String password) 
+	{
 		HibCon hRCheckUP = new HibCon();
 		boolean value;
 		try (Session s = hRCheckUP.getSessionFactory().openSession()) {
@@ -94,13 +98,12 @@ public class UserHelper {
 
 	}
 
-
 //	/* ------------------------ SETTINGS -------------------------------*/
 //	/*-----------------------------------------------------------------*/
 //
 //	//UPDATE - modifica parametri Utente
 //	// reference = colonna tabella 
-//	// newValue = il dato da scrivere sopra all'originale con quelli gi‡ in colonna
+//	// newValue = il dato da scrivere sopra all'originale con quelli gi√† in colonna
 //	//prevede un check di "autenticazione" dell'utente che deve inserire il suo usr e la sua psw
 //	public void updateUser(String reference, String newValue, String username, String password) {
 //		HibCon hUUpdateUser = new HibCon();
@@ -109,13 +112,13 @@ public class UserHelper {
 //			//controlla che usr/psw immesse corrispondano a usr/psw su DB 
 //			//vedi metodo checkUP (sopra)
 //			boolean check = uHup.checkUP(username, password);
-//			//se l'utente Ë "autenticato" permette di modificare il dato dentro alla colonna reference corrispondente 
+//			//se l'utente √® "autenticato" permette di modificare il dato dentro alla colonna reference corrispondente 
 //			//allo username inserito dall'utente
 //			if (check == true) {
 //				Query update = s.createQuery("update Utente u set u."+reference+" = '"+newValue+"' where u.username = '"+username+"'" );
 //				update.executeUpdate();
 //			} else {
-//				//se l'utente non Ë "autenticato" stampa un errore - DA SISTEMARE PER OUTPUT SU PAGINA HTML (no syso)
+//				//se l'utente non √® "autenticato" stampa un errore - DA SISTEMARE PER OUTPUT SU PAGINA HTML (no syso)
 //				System.out.println("Username o password inseriti non sono corretti!");
 //			}
 //		}
