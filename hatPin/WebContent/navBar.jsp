@@ -21,8 +21,12 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-info my-2 my-sm-0 navItem" id="navPin" type="button"><img src="./immagini/AddPin.png" id="scrittaAddPin"></button>
+        <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navPin" type="button"><img src="./immagini/AddPin.png" id="scrittaAddPin"></button>
       </form>
+      <form class="form-inline NavBarsearch" action="profilo.jsp">
+      <input class="form-control"  type="text" placeholder="Username" aria-label="Search" name="username" id="inputNavbar">
+        <button class="btn btn-outline-light my-2 my-sm-0 navItem NavBarsearch" type="submit">Cerca</button>
+        </form>
     <!--     <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

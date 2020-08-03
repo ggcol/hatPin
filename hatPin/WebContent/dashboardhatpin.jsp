@@ -42,6 +42,9 @@ html, body {
   .leaflet-control{
     display: none;
   }
+  .NavBarsearch {
+    display: none;
+  }
 </style>
 </head>
 <body>

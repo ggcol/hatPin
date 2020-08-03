@@ -157,6 +157,8 @@ color:  #038C5A;
  padding: 0.875rem 1.25rem;
  font-size: 1.2rem;
 }
+.NavBarsearch{
+}
 #page-content-wrapper {
  min-width: 100vw;
 }
@@ -238,9 +240,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 .chebelcarattere{
 font-weight: bold;
-font-family: 'Rowdies', cursive;
-color: #3f3f3f ;
-opacity: 80%;
+font-family: sans-serif;
+color: white ;
 }
 
 #testone{
@@ -284,4 +285,7 @@ color: #d93223;
 }
 #testocredenziali{
   text-align: center;
+}
+#inputNavbar {
+  margin-top: 8px;
 }
