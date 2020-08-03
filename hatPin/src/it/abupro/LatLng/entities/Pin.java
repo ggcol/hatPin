@@ -25,14 +25,17 @@ public class Pin {
 	private String body;
 	@Column(name="ref_img")
 	private String ref_img;
+	@Column(name="username")
+	private String username;
 	
 	
-	public Pin(int idPin, String latlng, String title, String body, String ref_img) {
+	public Pin(int idPin, String latlng, String title, String body, String ref_img, String username) {
 		setIdPin(idPin);
 		setLatlng(latlng);
 		setTitle(title);
 		setBody(body);
 		setRef_img(ref_img);
+		setUsername(username);
 		
 	}
 	
@@ -79,40 +82,14 @@ public class Pin {
 	}
 	
 	
-	//Questi sono 3 finti override di toString in modo che quando li chiamo in una 
-	// stringa mi infili solo il parametro desiderato
 	
-	/* servono ad ovviare alla differenza tra SQL e HQL, probabilmente studiando meglio HQL non si 
-	 * renderebbero necessari perché si potrebbero fare tre query differenti
-	 * che estraggono liste di singoli parametri, anzichè liste di "serie di parametri"
-	 * 
-	 * Li utilizza la classe PinHelper
-	 */
-	
-	//LatLng
-	public String LatLngToString() {
-		String latlng = getLatlng().toString();
-		return latlng;
+	public String getUsername() {
+		return username;
 	}
-	
-	//Titolo
-	public String TitleToString() {
-		String title = getTitle().toString();
-		return title;
-	}
-	
-	//Corpo
-	public String BodyToString() {
-		String body = getBody().toString();
-		return body;
-	}
-	
-	
-	
-	
-	
 
-	
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	
 
 }

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Impostazioni</title>
+<!-- Stylesheet di bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!--nostro css-->
+ <link rel="stylesheet" type="text/css" href="css/hatPin.css">
+<!--imp css-->
+	<link rel="stylesheet" type="text/css" href="css/Imp.css">
+
+<style>
+html, body {
+  margin: 0;
+  height: 100vm;
+}
+</style>
+
+</head>
+<body>
+  <!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom3">
+            <button class="btn btn-light my-2 my-sm-2 navItem" id="navHome" type="button" onclick="location.href='dashBoardHatPin.html'">
+              hat<font color = #D93223>P</font>in
+            </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    <div class="collapse navbar-collapse my-sm-0" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navBacheca" type="button" onclick="location.href='bacheca.html'">Bacheca</button>
+          </li>
+          <li class="nav-item active">
+              <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navProfilo" type="button" onclick="location.href='profilo.html'">Profilo</button>
+          </li>
+          <li class="nav-item active">
+              <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navImpostazioni" type="button" onclick="location.href='impostazioni.html'">Impostazioni</button>
+          </li>
+          </ul>
+  <!--     <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>  -->
+      </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Profile Settings-->
+        <div class="col-md-4 ">
+            <form action = "modificaUtente" method="post">
+  <!-- Account Sidebar-->
+                  <div class="author-card pb-3">
+                      <div class="author-card-cover" style="background-image: url(https://demo.createx.studio/createx-html/img/widgets/author/cover.jpg);"><a class="btn btn-style-1 btn-white btn-sm" href="#" data-toggle="tooltip" title="" data-original-title="You currently have 290 Reward points to spend"><i class="fa fa-award text-md"></i>&nbsp;290 points</a></div>
+                      <div class="author-card-profile">
+                          <div class="author-card-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Daniel Adams">
+                          </div>
+                          <div class="author-card-details">
+                              <h5 class="author-card-name text-lg">Daniel Adams</h5><span class="author-card-position">Joined February 06, 2017</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="wizard">
+                      <nav class="list-group list-group-flush">
+                          <a class="list-group-item" href="#">
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div><i class="fe-icon-shopping-bag mr-1 text-muted"></i>
+                                      <div class="d-inline-block font-weight-medium text-uppercase">Orders List</div>
+                                  </div><span class="badge badge-secondary">6</span>
+                              </div>
+                          </a><a class="list-group-item active" href="#"><i class="fe-icon-user text-muted"></i>Profile Settings</a><a class="list-group-item" href="#"><i class="fe-icon-map-pin text-muted"></i>Addresses</a>
+                          <a class="list-group-item" href="#">
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div><i class="fe-icon-heart mr-1 text-muted"></i>
+                                      <div class="d-inline-block font-weight-medium text-uppercase">My Wishlist</div>
+                                  </div><span class="badge badge-secondary">3</span>
+                              </div>
+                          </a>
+                          <a class="list-group-item" href="#">
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div><i class="fe-icon-tag mr-1 text-muted"></i>
+                                      <div class="d-inline-block font-weight-medium text-uppercase">My Tickets</div>
+                                  </div><span class="badge badge-secondary">4</span>
+                              </div>
+                          </a>
+                      </nav>
+                  </div>
+</div>
+
+<!-- Label di acquisizione --->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="account-fn">User</label>
+                        <input class="form-control" type="text" id="account-fn" placeholder="User" required="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="account-ln">E-Mail</label>
+                        <input class="form-control" type="text" id="account-ln"  placeholder="e-mail" required="">
+                    </div>
+                </div>
+        <div class="w-100"></div>
+                  <div class="col-md-4">
+                <div class="form-group">
+                    <label for="account-confirm-pass">Name</label>
+                    <input class="form-control" type="password" id="account-confirm-pass" placeholder="Name">
+                </div>
+                  </div>
+                  <div class="col-md-4">
+                <div class="form-group">
+                    <label for="account-confirm-pass">Surname</label>
+                    <input class="form-control" type="password" id="account-confirm-pass" placeholder="Surname" >
+                </div>
+                  </div>
+      <div class="w-100"></div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="account-email">Password</label>
+                        <input class="form-control" type="email" id="account-email" placeholder="Password" disabled="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="account-phone">Password Check</label>
+                        <input class="form-control" type="text" id="account-phone" placeholder="Password Check" required="">
+                    </div>
+                </div>
+    <div class="w-100"></div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="account-pass">Bio</label>
+                        <input class="form-control" type="textarea" id="account-pass" placeholder="Bio">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-12">
+                    <hr class="mt-2 mb-3">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="custom-control custom-checkbox d-block">
+                            <input class="custom-control-input" type="checkbox" id="subscribe_me" checked="">
+                            <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
+                        </div>
+                        <button class="btn btn-style-1 btn-primary" type="submit" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile</button>
+                    </div>
+                </div>
+            </form>
+
+    </div>
+</div>
+
+</body>
+</html>

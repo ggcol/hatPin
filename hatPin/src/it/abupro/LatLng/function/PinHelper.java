@@ -34,7 +34,7 @@ public class PinHelper {
 	
 	
 	//READ - metodo per leggere i pin e restituire una lista di singoli parametri dei pin come stringhe
-	public List<String> importPinFields() {
+	public LinkedList<String> importPinFields() {
 		HibCon hLImportPinFields = new HibCon();
 		try (Session s = hLImportPinFields.getSessionFactory().openSession()) {
 			@SuppressWarnings("unchecked")
@@ -43,14 +43,14 @@ public class PinHelper {
 			List<Pin> read = s.createQuery("FROM Pin").getResultList();
 			
 			//lista di Stringhe che accoglierà i parametri dei pin come stringhe
-			List<String> result = new LinkedList<String>();
+			LinkedList<String> result = new LinkedList<String>();
 		
 			//Inserisce nella lista result i vari parametri necessari al costruttore .js Pin
 			//sotto forma di singole Stringhe
-			for (Pin item : read) {
-				String latlng = item.LatLngToString();
-				String title = item.TitleToString();
-				String body = item.BodyToString();
+			for (Pin p : read) {
+				String latlng = p.getLatlng();
+				String title = p.getTitle();
+				String body = p.getBody();
 				
 				result.add(latlng);
 				result.add(title);
@@ -72,13 +72,7 @@ public class PinHelper {
 	//vedi InsertPin.java / riga 37
 	public String uploadImg(Part part) {
 		//indica il percorso dove finirà l'immagine
-		/* sono riuscito a farlo funzionare solo con percorsi assoluti e 
-		 * non relativi. Probabilmente se caricato su vero server funzionerebbe
-		 * anche con percorso relativo
-		 * Se volete farlo funzionare anche da voi in locale dovete cambiare
-		 * qua il percorso di directory con il vostro in locale su disco
-		 */
-		final String PATH = "C:\\Users\\ggcol\\git\\hatPin\\hatPin\\WebContent\\PinPictures";
+		final String PATH = "PinPictures/";
 		//mette in una stringa il nome del file come inserito da utente
 		String nameImg = part.getSubmittedFileName();
 		try{
@@ -120,7 +114,7 @@ public class PinHelper {
 			e.printStackTrace();
 		}
 		//infila in stringa ref_img il percorso che porta fino al file appena scritto)
-		String ref_img = (PATH+"\\"+nameImg);
+		String ref_img = (PATH+nameImg);
 		//ritorna percorso assoluto dove c'è immagine
 		return ref_img;
 	}
