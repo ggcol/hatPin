@@ -18,6 +18,9 @@
   html, body {
   overflow-x: hidden
 }
+ #navPin {
+   display: none;
+ }
 </style>
 </head>
 <body>
@@ -37,7 +40,7 @@
       	flag++;
       	%>
        <div id="postForm" class="card">
-          <h2 class="text titoloPost">
+          <h2 class="titoloPost">
             <%=title %>
             <br>
           </h2>

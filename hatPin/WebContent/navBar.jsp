@@ -21,7 +21,7 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-info my-2 my-sm-0 navItem" id="navPin" type="button">Add Pin</button>
+        <button class="btn btn-info my-2 my-sm-0 navItem" id="navPin" type="button"><img src="./immagini/AddPin.png" id="scrittaAddPin"></button>
       </form>
     <!--     <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
