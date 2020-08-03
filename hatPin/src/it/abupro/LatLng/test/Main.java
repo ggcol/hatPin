@@ -8,7 +8,9 @@ import it.abupro.LatLng.function.*;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
+		
 		// TODO Auto-generated method stub
 		
 /* ---------- era una prova per estrarre i dati pin immagazzinati su DB ------------ 
