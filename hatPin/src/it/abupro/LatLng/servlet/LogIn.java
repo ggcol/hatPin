@@ -14,7 +14,7 @@ import it.abupro.LatLng.function.UserHelper;
 /**
  * Servlet implementation class LogIn
  */
-@WebServlet("/LogIn")
+@WebServlet("/logIn")
 public class LogIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,10 +31,13 @@ public class LogIn extends HttpServlet {
 		
 		if (checkUP == true)  {
 		//se la concordanza username-password è verificata invia a dashboard
-			response.sendRedirect("dashboard.html");
+			response.sendRedirect("dashBoardHatPin.html");
 		} else {
 		//se la concordanza username-password NON è verificata restituisce un errore sulla pagina
-			response.getOutputStream().println("Qualcosa è andato storto, \n<b>verifica la correttezza dei dati inseriti!</b>");
+			//bisogna aggiungere ${errore_login} nella pagina
+			request.setAttribute("errore_login", "Qualcosa è andato storto,<br>verifica la correttezza dei dati<br>inseriti!");
+			request.getRequestDispatcher("/login.html").include(request, response);
+			
 		}
 	
 	}

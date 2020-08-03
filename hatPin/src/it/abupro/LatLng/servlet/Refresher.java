@@ -25,22 +25,16 @@ public class Refresher extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		//oggetto per estrarre dati da DB
 		PinHelper pH = new PinHelper();
 		//Lista che accoglie risultati estrazione (Stringhe)
-		List<String> param4Marker = new LinkedList<String>();
-
-		//Ficco nella lista singole stringhe (vedi in classe PinHelper)
-		param4Marker = pH.importPinFields();
-
+		LinkedList<String> param4Marker = pH.importPinFields();
 		//Ciclo la lista per estrarre le Stringhe con i singoli "parametri" che necessita
 		//il costruttore .js dei Pin
 		for (int i = 0; i < param4Marker.size(); i = i+3) {
 			String latlng = param4Marker.get(i).toString();
 			String titolo = param4Marker.get(i+1).toString();
 			String corpo = param4Marker.get(i+2).toString();
-
 			//Sempre ciclando infilo le singole stringhe con i "parametri" nel costruttore
 			//.js dei Pin e lo mando alla pagina con la mappa
 
@@ -48,19 +42,14 @@ public class Refresher extends HttpServlet {
 			 * - non aggiunge i pop-up
 			 * - non legge il primo record su DB
 			 */
-
 			response.getOutputStream().println("<script> \nvar pinNuovo = L.marker(["+latlng+"]).addTo(myMap); \n"
 					+ "pinNuovo.bindPopup('<b>"+titolo+"</b><br>"+corpo+"'); \n"
 					+ "</script>");
-
 		}
 		//fuori dal ciclo
-
-
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
