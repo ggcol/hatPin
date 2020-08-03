@@ -38,6 +38,7 @@ public class InsertPin extends HttpServlet {
 		//carica immagine e restituisce percorso assoluto come stringa
 		//vedi PinHelper.java / uploadImg()
 		String ref_img = pH.uploadImg(img);
+		p1.setUsername(request.getParameter("username"));
 
 		p1.setRef_img(ref_img);
 		pH.newPin(p1);
