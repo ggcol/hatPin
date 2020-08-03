@@ -21,26 +21,29 @@
  #navPin {
    display: none;
  }
- .NavBarsearch {
-   display: none;
- }
 </style>
 </head>
 <body>
+
   <!-- navbar -->
     	<%@ include file="navBar.jsp" %>
+
 <!-- contenitore di pin-->
   <div class="card text-center bg-custom post" id="containterPin">
-     <% WallHelper wh = new WallHelper();
-      LinkedList<String> read = wh.importPin4Wall(); %>
+    <% String usr = request.getParameter("username");
+      if (usr != null) {%>
+      <% WallHelper wh = new WallHelper();
+      LinkedList<String> read = wh.importPin4Personal(username); %>
+
       <%! int flag = 0; %>
-      <%  for (int i = 0; i < read.size(); i = i+5) {
-      	String latlng = read.get(i);
-      	String title = read.get(i+1);
-      	String body = read.get(i+2);
-      	String ref_img = read.get(i+3);
-      	String username = read.get(i+4);
-      	flag++;
+      <%  for (int i = 0; i < read.size(); i = i+4) {
+        String latlng = read.get(i);
+        String title = read.get(i+1);
+        String body = read.get(i+2);
+ String ref_img = read.get(i+3);
+ flag++;
+ %>
+
       	%>
        <div id="postForm" class="card">
           <div class="card-header"><h2 class="titoloPost">
@@ -51,11 +54,12 @@
 
           <img src="<%=ref_img%>" class="card-img-top">
           <div class="card-body">
-            <p class="card-text text"><%=body %><br>Username: <%=username %></p>
+            <p class="card-text text"><%=body %></p>
 
           </div>
         </div>
         <% } %>
+      <% } %>
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
