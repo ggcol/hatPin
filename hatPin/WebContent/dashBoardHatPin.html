@@ -19,6 +19,8 @@
   	crossorigin=""></script>
     <!--nostro css-->
     <link rel="stylesheet" type="text/css" href="css/hatPin.css">
+    <!--script ingranaggio-->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <style>
 html, body {
   margin: 0;
@@ -41,7 +43,7 @@ html, body {
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="card bg-custom" id="formDash">
-  <img src="./immagini/logoHatPin.png" class="card-img-top" id="imagePinHub"alt="...">
+  <img src="./immagini/logoHatPin2.png" class="card-img-top" id="imagePinHub">
   <div  class="text">
   <div id="formSide">
     <form action="insertPin" method="post" enctype="multipart/form-data">
@@ -52,6 +54,10 @@ html, body {
     <div class="sideNavForm" class="form-group">
     <label for="body"><b>Cosa vuoi raccontare?</b></label>
   <textarea class="form-control" id="body" name="body" rows="2"></textarea>
+  </div>
+  <div class="sideNavForm" class="form-group">
+      <label for="username"><b>Utente</b></label>
+      <input type="text" class="form-control" id="username" name="username">
   </div>
     <div class="form-group">
       <label for="file"><b>Photo</b></label>
@@ -68,8 +74,8 @@ html, body {
     <div id="page-content-wrapper">
       <!-- navbar -->
       	<nav class="navbar navbar-expand-lg navbar-dark bg-custom3">
-      		<button class="btn btn-light my-2 my-sm-2 navItem" id="navHome" type="button" onclick="location.href='dashBoardHatPin.html'">
-      			hat<font color = #D93223>P</font>in
+      		<button class="btn btn-light my-2 my-sm-2 navItem" id="navHome" type="button" action="refresher">
+      		<img src="./immagini/HatPin.png" id="scrittaHatPin">
       		</button>
       	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       	    <span class="navbar-toggler-icon"></span>
@@ -77,13 +83,13 @@ html, body {
       	  <div class="collapse navbar-collapse my-sm-0" id="navbarSupportedContent">
       	    <ul class="navbar-nav mr-auto">
       	      <li class="nav-item active">
-      					<button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navBacheca" type="button" onclick="location.href='bacheca.html'">Bacheca</button>
+      					<button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navBacheca" type="button" onclick="location.href='bacheca.html'"><span class="iconify" data-icon="si-glyph:pin-location-map" data-inline="false"></span></button>
       	      </li>
       				<li class="nav-item active">
-      					<button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navProfilo" type="button" onclick="location.href='profilo.html'">Profilo</button>
+      					<button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navProfilo" type="button" onclick="location.href='profilo.html'"><span class="iconify" data-icon="si-glyph:person" data-inline="false"></span></button>
       	      </li>
       				<li class="nav-item active">
-      					  <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navImpostazioni" type="button" onclick="location.href='impostazioni.html'">Impostazioni</button>
+      					  <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navImpostazioni" type="button" onclick="location.href='impostazioni.html'"><span class="iconify" data-icon="si-glyph:gear" data-inline="false"></span></button>
       	      </li>
       	    </ul>
       			<form class="form-inline my-2 my-lg-0">
