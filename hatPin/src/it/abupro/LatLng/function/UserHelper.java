@@ -52,7 +52,8 @@ public class UserHelper {
 
 
 	//READ - controllo validità logIn
-	public boolean checkUP (String username, String password) {
+	public boolean checkUP (String username, String password) 
+	{
 		HibCon hRCheckUP = new HibCon();
 		boolean value;
 		try (Session s = hRCheckUP.getSessionFactory().openSession()) {
