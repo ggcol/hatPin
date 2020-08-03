@@ -200,3 +200,35 @@ color:  #038C5A;
   height: 47%;
   width: 47%;
 }
+#postForm{
+margin-top: 50px;
+margin: 50px;
+opacity: 85%;
+color: #63676c;
+font-weight: bold;
+font-family: sans-serif;
+text-align: center;
+}
+#containterPin{
+background-color: #F2C6A0;
+margin-top: 50px;
+margin-bottom: 50px;
+margin: 150px;
+border-radius: 25%;
+padding-bottom: 50px;
+padding-top: 50px;
+opacity: 95%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.ref_imgForm {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 100px;
+}
+.imageContainerForm {
+  margin-bottom: 100px;
+
+}
+.postFormInterni {
+  margin-bottom: 100px;
+}
