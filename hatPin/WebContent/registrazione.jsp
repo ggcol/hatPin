@@ -58,13 +58,13 @@
 					<input type="password" name="password2" class="form-control" id="password2">
 					</div>
 					<div class="errori">
-					<p class="smallText">${user_null}</p>
-					<p class="smallText">${userAE}</p>
-					<p class="smallText">${email_null}</p>
-					<p class="smallText">${emailAE}</p>
-					<p class="smallText">${password_null}</p> 
-					<p class="smallText">${password_not_equals}</p>
-					<p class="smallText">${birthdate_error}</p>
+					<p class="errorText">${user_null}</p>
+					<p class="errorText">${userAE}</p>
+					<p class="errorText">${email_null}</p>
+					<p class="errorText">${emailAE}</p>
+					<p class="errorText">${password_null}</p> 
+					<p class="errorText">${password_not_equals}</p>
+					<p class="errorText">${birthdate_error}</p>
 					</div>
 					<button type="submit" class="btn btn-info btn-outline-light" id="submitButton">Submit</button>
 				</form>

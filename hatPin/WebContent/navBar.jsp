@@ -17,9 +17,10 @@
             <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navProfilo" type="button" onclick="location.href='profilo.jsp'"><span class="iconify" data-icon="si-glyph:person" data-inline="false"></span></button>
           </li>
           <li class="nav-item active">
-              <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navImpostazioni" type="button" onclick="location.href='PaginaImpostazioni.html'"><span class="iconify" data-icon="si-glyph:gear" data-inline="false"></span></button>
+              <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navImpostazioni" type="button" onclick="location.href='impostazioni.jsp'"><span class="iconify" data-icon="si-glyph:gear" data-inline="false"></span></button>
           </li>
         </ul>
+        <div class="errori" id="erroreLatLng"><p class="errorText">${latlng_null}</p></div>
         <form class="form-inline my-2 my-lg-0">
         <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navPin" type="button"><img src="./immagini/AddPin.png" id="scrittaAddPin"></button>
       </form>

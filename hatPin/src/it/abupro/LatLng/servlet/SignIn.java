@@ -36,7 +36,7 @@ public class SignIn extends HttpServlet {
 			request.setAttribute("user_null", "Non hai inserito uno username!");
 			//se username è già in uso segnala errore
 		} else if (usrAE == true) {
-			request.setAttribute("userAE", "Username già in uso, prova con un altro!");
+			request.setAttribute("userAE", "Username gia' in uso, prova con un altro!");
 		}
 		/*---------------------------------------------------*/
 
@@ -52,7 +52,7 @@ public class SignIn extends HttpServlet {
 			request.setAttribute("email_null", "Non hai inserito un indirizzo email!");
 			//se email è già in uso segnala errore
 		} else if (emailAE == true) {
-			request.setAttribute("email_AE", "Email già in uso, prova con un'altra!");
+			request.setAttribute("email_AE", "Email gia' in uso, prova con un'altra!");
 		}
 		/*---------------------------------------------------*/
 
@@ -69,7 +69,7 @@ public class SignIn extends HttpServlet {
 			request.setAttribute("password_null", "Non hai inseito correttamente le password!");
 			//se le password non coincidono segnala errore
 		} else if (checkedP == false) {
-			request.setAttribute("password_not_equals", "Le due password non coincidono<br>o non rispettano i prerequisiti");
+			request.setAttribute("password_not_equals", "Le due password non coincidono<br>o non rispettano i prerequisiti!");
 		}
 		/*---------------------------------------------------*/
 		

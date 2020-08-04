@@ -62,7 +62,7 @@ html, body {
             le credenziali nel riquadro a sinistra <br> e poi compilare i campi desiderati sulla destra</h5>
            
       </div>
-       <center><div><p class="text smallText">${update_profile_ok} ${update_profile_not_ok}</p></div></center>
+       <center><div><p class="errorText">${update_profile_ok} ${update_profile_not_ok}</p></div></center>
       
 
 <div class="container mt-5">

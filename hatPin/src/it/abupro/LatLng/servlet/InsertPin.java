@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import org.hibernate.exception.ConstraintViolationException;
+
 import it.abupro.LatLng.entities.*;
 import it.abupro.LatLng.function.PinHelper;
 
@@ -33,12 +35,12 @@ public class InsertPin extends HttpServlet {
 		p1.setTitle(request.getParameter("title"));
 		p1.setBody(request.getParameter("body"));
 		String latlng = request.getParameter("latlng");
-		boolean check = pH.latlngNotNull(latlng);
-		if (check == true) {
-			p1.setLatlng(latlng);
-		} else {
-			request.setAttribute("latlng_null", "Devi pinnare sulla mappa prima di salvare!");
-		}
+//		boolean check = pH.latlngNotNull(latlng);
+//		if (check == true) {
+//			p1.setLatlng(latlng);
+//		} else {
+//			request.setAttribute("latlng_null", "Devi pinnare sulla mappa prima di salvare!");
+//		}
 		//prende in parti il file
 		Part img = request.getPart("file");
 		//carica immagine e restituisce percorso assoluto come stringa
@@ -46,10 +48,17 @@ public class InsertPin extends HttpServlet {
 		String ref_img = pH.uploadImg(img);
 		p1.setUsername(request.getParameter("username"));
 		p1.setRef_img(ref_img);
-		pH.newPin(p1);
+		try {
+			pH.newPin(p1);
+			response.sendRedirect("dashboardhatpin.jsp");
+		} catch (ConstraintViolationException noLatLng) {
+			request.setAttribute("latlng_null", "Devi pinnare sulla mappa prima di salvare!");
+			request.getRequestDispatcher("/dashboardhatpin.jsp").include(request, response);		
+		}
 
-		request.getRequestDispatcher("/dashboardhatpin.jsp").include(request, response);		
-		response.sendRedirect("dashboardhatpin.jsp");
+		
+		
+		
 
 
 

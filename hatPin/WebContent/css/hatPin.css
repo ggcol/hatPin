@@ -237,7 +237,15 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 .smallText {
   font-size: x-small;
 }
-
+.errorText {
+	font-size: small;
+	color: red !important;
+	text-align: center;
+}
+#erroreLatLng {
+	margin-right: auto;
+    margin-top: 20px;
+}
 .chebelcarattere{
 font-weight: bold;
 font-family: sans-serif;
@@ -288,4 +296,5 @@ color: #d93223;
 }
 #inputNavbar {
   margin-top: 8px;
+}
 }

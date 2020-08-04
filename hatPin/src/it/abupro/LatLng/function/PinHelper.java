@@ -12,6 +12,7 @@ import java.util.List;
 import javax.servlet.http.Part;
 
 import org.hibernate.Session;
+import org.hibernate.exception.ConstraintViolationException;
 
 import it.abupro.LatLng.connection.*;
 import it.abupro.LatLng.entities.*;
@@ -23,7 +24,7 @@ public class PinHelper {
 	
 	
 	//CREATE - metodo per inserimento nuovo pin
-	public void newPin(Pin l) {
+	public void newPin(Pin l) throws ConstraintViolationException {
 	HibCon hCNewPin = new HibCon();
 	try (Session s = hCNewPin.getSessionFactory().openSession()) {
 		s.beginTransaction();
@@ -66,7 +67,7 @@ public class PinHelper {
 	
 	public boolean latlngNotNull (String latlng) {
 		boolean check;
-		if (latlng.equals(null)) {
+		if (latlng.isBlank() || latlng.equals(null)) {
 			check = false;
 		} else {
 			check = true;
