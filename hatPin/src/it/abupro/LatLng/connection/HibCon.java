@@ -22,31 +22,6 @@ public class HibCon {
 		return sFactory;
 	}
 	
-	/*
-	 * Schema "hatpin"
-	 * 
-	 * Tabella pin
-	 * colonne:
-	 * 
-	 * idPin INT PK, NN, UQ, AI
-	 * latlng VARCHAR(255) NN
-	 * title VARCHAR(255) 
-	 * body MEDIUMTEXT
-	 * ref_img VARCHAR(255) 
-	 * 
-	 * Tabella utente
-	 * colonne:
-	 * 
-	 * idUser INT PK, NN, UQ, AI
-	 * username VARCHAR(255) NN, UQ
-	 * name VARCHAR (255)
-	 * surname VARCHAR(255)
-	 * bio MEDIUMTEXT
-	 * email VARCHAR(255) NN, UQ
-	 * password VARCHAR (255) NN
-	 * birthdate VARCHAR (45)
-	 * gender VARCHAR (45)
-	 */
 }
 
 

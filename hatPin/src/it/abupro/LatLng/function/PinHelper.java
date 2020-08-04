@@ -82,41 +82,35 @@ public class PinHelper {
 	//prende in ingresso il file in parti 
 	//vedi InsertPin.java / riga 37
 	public String uploadImg(Part part) {
-		//indica il percorso dove finirà l'immagine
-		final String PATH = "PinPictures/";
+		//descrive il path dove finirà l'immagine
+		final String PATH = "C:\\Users\\ggcol\\git\\hatPin\\hatPin\\WebContent\\PinPictures\\";
 		//mette in una stringa il nome del file come inserito da utente
 		String nameImg = part.getSubmittedFileName();
 		try{
-		
+			
+
 		InputStream in = null;
 		OutputStream out = null;
-		
+
 		try {
 			//prende le parti inviate da http come input stream
 			in = part.getInputStream();
-			//crea un nuovo file con nome uguale a quello inserito da utente nel percorso
-			//identificato a riga 79
-			out = new FileOutputStream(new File(PATH+"\\"+nameImg));
-			
-			//buffer! - serve per leggere gruppi di byte (n.b. è un array di byte)
+			out = new FileOutputStream(new File(PATH+nameImg));
+
+			//buffer!
 			byte[] buffer = new byte[4096];
 			int read;
-			
+
 			//scrive i byteletti nella destinazione di output
-			//finchè in int read c'è qualcosa (legge dall'array di byte)
 			while ((read = in.read(buffer)) >= 0) {
-				//OutputStream scrive 
 				out.write(buffer, 0, read);
 			}
 			} catch (FileNotFoundException e) {
-				System.out.println("L'utente non ha selezionato un immagine valida");
+				System.out.println("L'utente non ha selezionato un'immagine valida");
 			} finally {
-				//finally sempre eseguita anche se non si solleva eccezione
-				//chiude OutputStream
 				if (out != null) {
 					out.close();
 				} 
-				//chiude InputStream
 				if (in != null) {
 					in.close();
 				}
@@ -124,8 +118,7 @@ public class PinHelper {
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
-		//infila in stringa ref_img il percorso che porta fino al file appena scritto)
-		String ref_img = (PATH+nameImg);
+		String ref_img = ("PinPictures/"+nameImg);
 		//ritorna percorso assoluto dove c'è immagine
 		return ref_img;
 	}

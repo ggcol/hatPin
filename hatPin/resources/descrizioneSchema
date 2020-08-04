@@ -1,0 +1,59 @@
+------------Schema 'hatpin':
+	 
+	 sql:
+	 
+	 CREATE SCHEMA `hatpin` ;
+	 
+	 -----Tabella 'pin':
+	 
+	 --Column:
+	 idPin INT PK, NN, UQ, AI
+	 latlng VARCHAR(255) NN
+	 title VARCHAR(255)
+	 body MEDIUMTEXT
+	 ref_img VARCHAR(255)
+	 username VARCHAR(255)
+	 
+	 sql:
+	 
+	CREATE TABLE `hatpin`.`pin` (
+	`idPin` INT NOT NULL AUTO_INCREMENT,
+	`latlng` VARCHAR(255) NOT NULL,
+	`title` VARCHAR(255) NULL,
+	`body` MEDIUMTEXT NULL,
+	`ref_img` VARCHAR(255) NULL,
+	`username` VARCHAR(255) NULL,
+	PRIMARY KEY (`idPin`),
+	UNIQUE INDEX `idPin_UNIQUE` (`idPin` ASC) VISIBLE);
+  
+	-----Tabella 'user'
+  
+	--Column: 
+	idUser INT PK, NN, UQ, AI
+	username VARCHAR(255) NN, UQ
+	name VARCHAR(255)
+	surname VARCHAR(255)
+	bio MEDIUMTEXT
+	email VARCHAR(255) NN, UQ
+	password VARCHAR(255) NN
+	birthdate VARCHAR(45)
+	gender VARCHAR(45)
+	 
+	 sql:
+	 
+	CREATE TABLE `hatpin2`.`user` (
+	`idUser` INT NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(255) NOT NULL,
+	`name` VARCHAR(255) NULL,
+	`surname` VARCHAR(255) NULL,
+	`bio` MEDIUMTEXT NULL,
+	`email` VARCHAR(255) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`birthdate` VARCHAR(45) NULL,
+	`gender` VARCHAR(45) NULL,
+	PRIMARY KEY (`idUser`),
+	UNIQUE INDEX `idUser_UNIQUE` (`idUser` ASC) VISIBLE,
+	UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE,
+	UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
+	 
