@@ -12,9 +12,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <!--nostro css-->
  <link rel="stylesheet" type="text/css" href="css/hatPin.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
-
 <style>
 html, body {
   margin: 0;
@@ -60,8 +57,8 @@ html, body {
                 </div>
 
                 <div class="form-group">
-                  <label for="account-phone" class="chebelcarattere">Utente</label>
-                  <input class="form-control" type="text" name="usrChck" id="account-phone" placeholder="Utente">
+                  <label for="account-phone" class="chebelcarattere">Username</label>
+                  <input class="form-control" type="text" name="usrChck" id="account-phone" placeholder="Username">
                 </div>
 
                 <div class="">

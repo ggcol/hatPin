@@ -24,7 +24,7 @@
 	<div class="card text-center bg-custom">
 	  <div class="card-body" style="margin-top: -50px;">
 			<div class="text" id="titolo">
-				<h2>Registrati a hat<font color = #BDAC5C>P</font>in</h2>
+				<h2 id="scrittaRegistrati">Registrati a hat<font color = #BDAC5C>P</font>in</h2>
 			</div>
 			<form action="signIn" method="post">
 				<div class="form-group">
@@ -44,17 +44,17 @@
 					<input class="form-control" id="birthdate" name="birthdate" placeholder="MM/GG/AAAA" type="text"/>
 				</div>
 				<div class="form-group">
-					<label class="text" for="email">E-mail:</label> 
+					<label class="text" for="email">E-mail</label>
 					<input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
 				</div>
 				<div class="form-group">
-					<label class="text" for="password1">Password</label> 
+					<label class="text" for="password1">Password</label>
 					<p class="text smallText">La password deve contenere almeno un carattere e un numero,<br>
 					lunghezza minima consentita 8 caratteri</p>
 					<input type="password" name="password1" class="form-control" id="password1">
 				</div>
 				<div class="form-group">
-					<label class="text" for="password2">Confirm Password</label>
+					<label class="text" for="password2">Conferma Password</label>
 					<input type="password" name="password2" class="form-control" id="password2">
 					</div>
 					<div class="errori">
@@ -62,7 +62,7 @@
 					<p class="errorText">${userAE}</p>
 					<p class="errorText">${email_null}</p>
 					<p class="errorText">${emailAE}</p>
-					<p class="errorText">${password_null}</p> 
+					<p class="errorText">${password_null}</p>
 					<p class="errorText">${password_not_equals}</p>
 					<p class="errorText">${birthdate_error}</p>
 					</div>
