@@ -19,7 +19,7 @@
       <div class="card text-center bg-custom">
       <div class="card-body">
       <div class="form-group">
-        <label class="text" for="username">Username:</label>
+        <label class="text" for="username">Username</label>
         <input name="username" type="text" class="form-control" id="username">
       </div>
       <div class="form-group">
