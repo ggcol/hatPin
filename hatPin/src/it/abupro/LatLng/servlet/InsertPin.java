@@ -34,14 +34,8 @@ public class InsertPin extends HttpServlet {
 
 		p1.setTitle(request.getParameter("title"));
 		p1.setBody(request.getParameter("body"));
-		String latlng = request.getParameter("latlng");
-//		boolean check = pH.latlngNotNull(latlng);
-//		if (check == true) {
-//			p1.setLatlng(latlng);
-//		} else {
-//			request.setAttribute("latlng_null", "Devi pinnare sulla mappa prima di salvare!");
-//		}
-		//prende in parti il file
+		p1.setLatlng(request.getParameter("latlng"));
+		//prende il file in parti
 		Part img = request.getPart("file");
 		//carica immagine e restituisce percorso assoluto come stringa
 		//vedi PinHelper.java / uploadImg()
@@ -56,9 +50,9 @@ public class InsertPin extends HttpServlet {
 			request.getRequestDispatcher("/dashboardhatpin.jsp").include(request, response);		
 		}
 
-		
-		
-		
+
+
+
 
 
 
