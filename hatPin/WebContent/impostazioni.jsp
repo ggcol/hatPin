@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <!--nostro css-->
  <link rel="stylesheet" type="text/css" href="css/hatPin.css">
-<!--imp css-->
-	<link rel="stylesheet" type="text/css" href="css/Imp.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
 
@@ -22,48 +20,29 @@ html, body {
   margin: 0;
   height: 100vm;
 }
+#navPin {
+  display: none;
+}
+.NavBarsearch {
+  display: none;
+}
 </style>
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 
 <body>
   <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custom3">
-      <button class="btn btn-light my-2 my-sm-2 navItem" id="navHome" type="button" onclick="location.href='dashboardhatpin.jsp'">
-      <img src="./immagini/HatPin.png" id="scrittaHatPin">
-      </button>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse my-sm-0" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navBacheca" type="button" onclick="location.href='bacheca.jsp'"><span class="iconify" data-icon="si-glyph:pin-location-map" data-inline="false"></span></button>
-          </li>
-          <li class="nav-item active">
-            <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navProfilo" type="button" onclick="location.href='profilo.jsp'"><span class="iconify" data-icon="si-glyph:person" data-inline="false"></span></button>
-          </li>
-          <li class="nav-item active">
-              <button class="btn btn-outline-light my-2 my-sm-0 navItem" id="navImpostazioni" type="button" onclick="location.href='PaginaImpostazioni.html'"><span class="iconify" data-icon="si-glyph:gear" data-inline="false"></span></button>
-          </li>
-        </ul>
-
-  <!--     <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>  -->
-      </div>
-    </nav>
+    	<%@ include file="navBar.jsp" %>
 
       <div>
          <br>
          <br>
          <h5 id="testone" class="chebelcarattere">Per modificare il proprio profilo inserire
             le credenziali nel riquadro a sinistra <br> e poi compilare i campi desiderati sulla destra</h5>
-           
+
       </div>
        <center><div><p class="errorText">${update_profile_ok} ${update_profile_not_ok}</p></div></center>
-      
+
 
 <div class="container mt-5">
 <div class="row">
